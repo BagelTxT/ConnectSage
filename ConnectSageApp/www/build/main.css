@@ -25219,77 +25219,6 @@ ion-navbar.toolbar {
   border: none !important;
 }
 
-page-edit .user1 {
-  width: 100%;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto;
-  margin-top: -75px;
-  -webkit-transform: scale(0.5);
-  transform: scale(0.5);
-}
-
-page-edit p {
-  font-size: 2rem;
-}
-
-page-engineering-mentors .card-content {
-  padding: 0;
-}
-
-page-engineering-mentors .mentor-pic {
-  width: 100%;
-  height: auto;
-}
-
-page-engineering-mentors .row {
-  height: 75px;
-  overflow: hidden;
-}
-
-page-engineering-mentors p {
-  font-size: 12px;
-}
-
-page-engineering-mentors .cardcolor {
-  background-color: #F2F2F2;
-}
-
-page-engineering-mentors .cardcolor2 {
-  background-color: #F2F2F2;
-}
-
-page-engineering-mentors .cardcolor3 {
-  background-color: #F2F2F2;
-}
-
-page-engineering-mentors .cardcolor4 {
-  background-color: #F2F2F2;
-}
-
-page-graphicss-mentors img {
-  height: 90%;
-  width: 40%;
-  display: block;
-  margin: 0 auto;
-}
-
-page-graphicss-mentors .cardcolor {
-  background-color: #F2F2F2;
-}
-
-page-graphicss-mentors .cardcolor2 {
-  background-color: #F2F2F2;
-}
-
-page-graphicss-mentors .cardcolor3 {
-  background-color: #F2F2F2;
-}
-
-page-graphicss-mentors .cardcolor4 {
-  background-color: #F2F2F2;
-}
-
 page-login .button-ios {
   height: 3em !important;
 }
@@ -25358,29 +25287,6 @@ img {
   width: 75%;
   display: block;
   margin: 0 auto;
-}
-
-page-math-mentors img {
-  height: 35%;
-  width: 40%;
-  display: block;
-  margin: 0 auto;
-}
-
-page-math-mentors .cardcolor {
-  background-color: #F2F2F2;
-}
-
-page-math-mentors .cardcolor2 {
-  background-color: #F2F2F2;
-}
-
-page-math-mentors .cardcolor3 {
-  background-color: #F2F2F2;
-}
-
-page-math-mentors .cardcolor4 {
-  background-color: #F2F2F2;
 }
 
 page-mentee-requests .deleter {
@@ -25478,29 +25384,6 @@ page-mentors .cardcolor4 {
   background-color: #F2F2F2;
 }
 
-page-physics-mentors img {
-  height: 35%;
-  width: 40%;
-  display: block;
-  margin: 0 auto;
-}
-
-page-physics-mentors .cardcolor {
-  background-color: #F2F2F2;
-}
-
-page-physics-mentors .cardcolor2 {
-  background-color: #F2F2F2;
-}
-
-page-physics-mentors .cardcolor3 {
-  background-color: #F2F2F2;
-}
-
-page-physics-mentors .cardcolor4 {
-  background-color: #F2F2F2;
-}
-
 page-signup .signup-content {
   background-image: url("../assets/images/aq.png");
   background-size: 120%;
@@ -25538,27 +25421,4 @@ page-signup ion-item {
   border-bottom: 0px !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-}
-
-page-theater-mentors img {
-  height: 35%;
-  width: 40%;
-  display: block;
-  margin: 0 auto;
-}
-
-page-theater-mentors .cardcolor {
-  background-color: #F2F2F2;
-}
-
-page-theater-mentors .cardcolor2 {
-  background-color: #F2F2F2;
-}
-
-page-theater-mentors .cardcolor3 {
-  background-color: #F2F2F2;
-}
-
-page-theater-mentors .cardcolor4 {
-  background-color: #F2F2F2;
 }

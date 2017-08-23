@@ -15,7 +15,7 @@ import { SearchPage } from'../pages/search/search';
 import { SignUpPage } from '../pages/signup/signup';
 import { MentorRequestsPage } from '../pages/mentor-requests/mentor-requests';
 import { MenteeRequestsPage } from '../pages/mentee-requests/mentee-requests';
-import { EditPage } from'../pages/edit/edit';
+import { EditPage } from '../pages/edit/edit';
 import { RequestPage }from '../pages/request/request';
 import { MentorListPage } from '../pages/mentor-list/mentor-list'
 import { TabsPage } from '../pages/tabs/tabs';

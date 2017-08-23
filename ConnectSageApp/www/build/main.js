@@ -1,15 +1,84 @@
 webpackJsonp([0],{
 
+/***/ 106:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SearchPage = (function () {
+    function SearchPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.initializeItems();
+    }
+    SearchPage.prototype.itemSelected = function (item) {
+        console.log("Selected Item", item);
+    };
+    SearchPage.prototype.initializeItems = function () {
+        this.items = [
+            'Jennifer Marston',
+            'Jordan Martinez',
+            'Fredrick Casmarias',
+            'Michael Furey',
+            'Biology',
+            'Engineering',
+            'Math',
+            'Graphics',
+            'Physics',
+            'Theater'
+        ];
+    };
+    SearchPage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        this.initializeItems();
+        // set val to the value of the ev target
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            this.items = this.items.filter(function (item) {
+                return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
+    };
+    SearchPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SearchPage');
+    };
+    return SearchPage;
+}());
+SearchPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-search',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/search/search.html"*/'<!--\n  Generated template for the SearchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n<ion-list>\n  <button ion-item *ngFor="let item of items"(click)="itemSelected(item)">\n    {{ item }}\n    </button>\n</ion-list> \n</ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/search/search.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+], SearchPage);
+
+//# sourceMappingURL=search.js.map
+
+/***/ }),
+
 /***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MajorsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_list_mentor_list__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,9 +129,10 @@ MajorsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-majors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/majors/majors.html"*/'<ion-header>\n  <ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>Career Paths</ion-title>\n\n    <!-- <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true">\n      <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons> -->\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n<ion-list>\n  <ion-grid>\n\n    <ion-row *ngFor="let majorList of splitMajors" >\n      <ion-col *ngFor="let major of majorList" col-6><img src = "{{major.image}}" (click)="openPage(major.major)" align="middle">\n      <h2 ALIGN=CENTER style="font-size:18px;">{{major.major}}</h2>\n      </ion-col>\n    </ion-row>\n\n    \n  </ion-grid>\n  </ion-list>\n  </ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/majors/majors.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__["a" /* UserDataProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__["a" /* UserDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__["a" /* UserDataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]) === "function" && _e || Object])
 ], MajorsPage);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=majors.js.map
 
 /***/ }),
@@ -73,8 +143,8 @@ MajorsPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectSageProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -112,6 +182,16 @@ var ConnectSageProvider = (function () {
             });
         });
     };
+    ConnectSageProvider.prototype.getMentees = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.http.get('http://localhost:8080/api/mentees')
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                resolve(data);
+            });
+        });
+    };
     return ConnectSageProvider;
 }());
 ConnectSageProvider = __decorate([
@@ -129,10 +209,10 @@ ConnectSageProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorRequestsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -229,96 +309,6 @@ webpackEmptyAsyncContext.id = 117;
 
 /***/ }),
 
-/***/ 13:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorsProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/*
-  Generated class for the MentorsProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
-var MentorsProvider = (function () {
-    function MentorsProvider(http) {
-        this.http = http;
-        console.log('Hello MentorsProvider Provider');
-        this.data = null;
-    }
-    MentorsProvider.prototype.getMentors = function () {
-        var _this = this;
-        if (this.data) {
-            return Promise.resolve(this.data);
-        }
-        return new Promise(function (resolve) {
-            _this.http.get('assets/data.json')
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                _this.data = data;
-                resolve(_this.data);
-            });
-        });
-    };
-    MentorsProvider.prototype.createMentor = function (mentor) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        this.http.post('https://corvids-coachcopy.herokuapp.com/api/mentors', JSON.stringify(mentor), { headers: headers })
-            .subscribe(function (res) {
-            console.log(res.json());
-        });
-    };
-    MentorsProvider.prototype.updatePendingMentee = function (mentorID, menteeID) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        var updateInfo = {
-            mentorID: mentorID,
-            menteeID: menteeID
-        };
-        this.http.post('https://corvids-coachcopy.herokuapp.com/api/acceptMentee', JSON.stringify(updateInfo), { headers: headers })
-            .subscribe(function (res) {
-            console.log(res.json());
-        });
-    };
-    MentorsProvider.prototype.deletePendingMentee = function (mentorID, menteeID) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        var updateInfo = {
-            mentorID: mentorID,
-            menteeID: menteeID
-        };
-        this.http.post('https://corvids-coachcopy.herokuapp.com/api/deletePendingMentee', JSON.stringify(updateInfo), { headers: headers })
-            .subscribe(function (res) {
-            console.log(res.json());
-        });
-    };
-    return MentorsProvider;
-}());
-MentorsProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
-], MentorsProvider);
-
-//# sourceMappingURL=mentors.js.map
-
-/***/ }),
-
 /***/ 159:
 /***/ (function(module, exports) {
 
@@ -332,121 +322,15 @@ webpackEmptyAsyncContext.id = 159;
 
 /***/ }),
 
-/***/ 17:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorProfilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__search_search__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__ = __webpack_require__(27);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-var MentorProfilePage = (function () {
-    function MentorProfilePage(alertCtrl, navCtrl, navParams, platform, mentorsService, ModalController, smsVar, menteesService) {
-        var _this = this;
-        this.alertCtrl = alertCtrl;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.platform = platform;
-        this.mentorsService = mentorsService;
-        this.ModalController = ModalController;
-        this.smsVar = smsVar;
-        this.menteesService = menteesService;
-        this.mentors = [];
-        this.text = {
-            "number": "",
-            "message": "",
-        };
-        this.disable = false;
-        platform.ready().then(function () {
-        });
-        this.mentor = this.navParams.data;
-        this.menteesService.getMentees().then(function (data) {
-            _this.mentee = data[0];
-            if (_this.mentee.pendingMentors.length > 0) {
-                for (var _i = 0, _a = _this.mentee.pendingMentors; _i < _a.length; _i++) {
-                    var pending = _a[_i];
-                    console.log(pending);
-                    if (pending.pic == _this.mentor.pic) {
-                        _this.disable = true;
-                        break;
-                    }
-                }
-            }
-        });
-    }
-    MentorProfilePage.prototype.openSearchPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__search_search__["a" /* SearchPage */]);
-    };
-    MentorProfilePage.prototype.sendRequest = function () {
-        this.disable = true;
-        this.menteesService.pushMentor(this.mentor);
-        var msg = "Your request to connect with " + this.mentor.first_name + ' ' + this.mentor.last_name + " has been sent.";
-        var alert = this.alertCtrl.create({
-            title: 'Request Sent',
-            subTitle: msg,
-            buttons: ['Ok']
-        });
-        alert.present();
-    };
-    MentorProfilePage.prototype.acceptRequest = function () {
-        this.mentorsService.updatePendingMentee(this.mentor._id, '598172c2f36d2839ce8b9d1f');
-    };
-    MentorProfilePage.prototype.sendSMS = function () {
-        this.sendMessage = 'Hi ' + this.mentor.first_name + ' my name is';
-        var options = {
-            replaceLineBreaks: false,
-            android: {
-                intent: 'INTENT' // Opens Default sms app
-                //intent: '' // Sends sms without opening default sms app
-            }
-        };
-        this.smsVar.send(this.mentor.phone_number, this.sendMessage, options)
-            .then(function () {
-        }, function () {
-        });
-    };
-    return MentorProfilePage;
-}());
-MentorProfilePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mentor-profiles',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-profiles/mentor-profiles.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <img class="user1"[src]="mentor.pic">\n  <br>\n  <h1 style="font-size:24px;">{{mentor.first_name}} {{mentor.last_name}}</h1>\n  <p style="font-size:24px;">Education: {{mentor.education}} {{mentor.major}} </p>\n  <p style="font-size:24px;">Age: {{mentor.age}}\n    <p style="font-size:20px;">About: {{mentor.bio}}</p>\n    <ion-row>\n      <ion-col width-50 style="text-align: center">\n        <button center ion-button (click)="sendRequest()" [disabled] ="disable"> Request Connection</button>\n      </ion-col>\n    </ion-row>\n    <!-- <button ion-button (click)="openMap()">See Location</button> -->\n\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-profiles/mentor-profiles.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */], __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */]])
-], MentorProfilePage);
-
-//# sourceMappingURL=mentor-profiles.js.map
-
-/***/ }),
-
 /***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenteeRequestsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentees_mentees__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentees_mentees__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -560,8 +444,8 @@ MenteeRequestsPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentees_mentees__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -581,14 +465,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var EditPage = (function () {
-    function EditPage(menteesService, navCtrl, navParams) {
+    function EditPage(navCtrl, navParams, provider) {
         var _this = this;
-        this.menteesService = menteesService;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.menteesService.getMentees().then(function (data) {
+        this.provider = provider;
+        this.provider.getMentees().then(function (data) {
             console.log(data);
             _this.data = data[0];
+            console.log(_this.data.first_name);
         });
     }
     EditPage.prototype.ionViewDidLoad = function () {
@@ -598,9 +483,9 @@ var EditPage = (function () {
 }());
 EditPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-edit',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n      <ion-title>{{data.first_name}}</ion-title>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  \n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n<img class = "user1" [src] = "data.pic">\n\n<!-- <ion-input style= "font-size:24px;" type="text" placeholder="Name: Jordy Martinez" name="First Name"></ion-input>\n<ion-input style= "font-size:24px;" type="text" placeholder="Education: High School Diploma(In Progress)" name="First Name"></ion-input>\n<ion-input style= "font-size:24px;" type="text" placeholder="age: 17" name="First Name"></ion-input>\n<ion-input style= "font-size:24px;" type="text" placeholder="About: born Hawthrone, California in 2001. Loves soccer and computer programming." name="First Name"></ion-input> -->\n<p><b>Age:</b> {{data.age}}</p>\n<p><b>Education:</b> {{data.education}}</p>\n<p><b>Dream Job:</b> {{data.dream_career}}</p>\n<p><b>Bio:</b> {{data.bio}}</p>\n\n  <ion-row>\n     <ion-col width-50 style="text-align: center">\n  <button center ion-button>Save Changes</button>\n     </ion-col>\n  </ion-row>\n\n  <!-- <button ion-button (click)="openMap()">See Location</button> -->\n\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/,
+        selector: 'page-edit',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n      <ion-title>{{data.first_name}}</ion-title>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  \n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n<img class = "user1" [src] = "data.pic">\n\n<p><b>Age:</b> {{data.age}}</p>\n<p><b>Education:</b> {{data.education}}</p>\n<p><b>Dream Job:</b> {{data.dream_career}}</p>\n<p><b>Bio:</b> {{data.bio}}</p>\n\n  <ion-row>\n     <ion-col width-50 style="text-align: center">\n  <button center ion-button>Save Changes</button>\n     </ion-col>\n  </ion-row>\n\n\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_mentees_mentees__["a" /* MenteesProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]])
 ], EditPage);
 
 //# sourceMappingURL=edit.js.map
@@ -613,13 +498,13 @@ EditPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_majors__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_requests_mentor_requests__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_mentees_mentees__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_data_user_data__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_mentees_mentees__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_data_user_data__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -699,8 +584,8 @@ LoginPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -758,11 +643,11 @@ MentorListPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignUpPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_majors__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_requests_mentor_requests__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -846,47 +731,37 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(269);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_sms__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_google_maps__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_mentors_mentors__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_engineering_mentors_engineering_mentors__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_graphics_mentors_graphics_mentors__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_math_mentors_math_mentors__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_physics_mentors_physics_mentors__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_theater_mentors_theater_mentors__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_mentor_profiles_mentor_profiles__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_majors_majors__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_search_search__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_signup_signup__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_mentor_requests_mentor_requests__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_mentee_requests_mentee_requests__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_edit_edit__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_request_request__ = __webpack_require__(287);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_mentor_list_mentor_list__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_tabs_tabs__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_mentees_mentees__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_user_data_user_data__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_mentor_profiles_mentor_profiles__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_majors_majors__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_search_search__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_mentor_requests_mentor_requests__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_mentee_requests_mentee_requests__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_edit_edit__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_request_request__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_mentor_list_mentor_list__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_mentees_mentees__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_user_data_user_data__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
 
 
 
@@ -924,21 +799,16 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_mentors_mentors__["a" /* MentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_engineering_mentors_engineering_mentors__["a" /* EngineeringMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_math_mentors_math_mentors__["a" /* MathMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_graphics_mentors_graphics_mentors__["a" /* GraphicsMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_physics_mentors_physics_mentors__["a" /* PhysicsMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_theater_mentors_theater_mentors__["a" /* TheaterMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_majors_majors__["a" /* MajorsPage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_search_search__["a" /* SearchPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_signup_signup__["a" /* SignUpPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_edit_edit__["a" /* EditPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_request_request__["a" /* RequestPage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_mentor_requests_mentor_requests__["a" /* MentorRequestsPage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_mentor_list_mentor_list__["a" /* MentorListPage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_tabs_tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_11__pages_majors_majors__["a" /* MajorsPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_search_search__["a" /* SearchPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__["a" /* SignUpPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_edit_edit__["a" /* EditPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_request_request__["a" /* RequestPage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_mentor_requests_mentor_requests__["a" /* MentorRequestsPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_mentor_list_mentor_list__["a" /* MentorListPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -951,33 +821,28 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_mentors_mentors__["a" /* MentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_engineering_mentors_engineering_mentors__["a" /* EngineeringMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_math_mentors_math_mentors__["a" /* MathMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_graphics_mentors_graphics_mentors__["a" /* GraphicsMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_physics_mentors_physics_mentors__["a" /* PhysicsMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_theater_mentors_theater_mentors__["a" /* TheaterMentorsPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_majors_majors__["a" /* MajorsPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_majors_majors__["a" /* MajorsPage */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_search_search__["a" /* SearchPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_signup_signup__["a" /* SignUpPage */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_edit_edit__["a" /* EditPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_request_request__["a" /* RequestPage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_mentor_requests_mentor_requests__["a" /* MentorRequestsPage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_mentor_list_mentor_list__["a" /* MentorListPage */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_tabs_tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_11__pages_majors_majors__["a" /* MajorsPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_majors_majors__["a" /* MajorsPage */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_search_search__["a" /* SearchPage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__["a" /* SignUpPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_edit_edit__["a" /* EditPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_request_request__["a" /* RequestPage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_mentor_requests_mentor_requests__["a" /* MentorRequestsPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_mentor_list_mentor_list__["a" /* MentorListPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_tabs_tabs__["a" /* TabsPage */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_5__ionic_native_sms__["a" /* SMS */],
-            __WEBPACK_IMPORTED_MODULE_25__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_26__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__["a" /* SplashScreen */],
             __WEBPACK_IMPORTED_MODULE_6__ionic_native_google_maps__["a" /* GoogleMaps */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicErrorHandler */] },
-            __WEBPACK_IMPORTED_MODULE_27__providers_mentors_mentors__["a" /* MentorsProvider */],
-            __WEBPACK_IMPORTED_MODULE_28__providers_mentees_mentees__["a" /* MenteesProvider */],
-            __WEBPACK_IMPORTED_MODULE_29__providers_user_data_user_data__["a" /* UserDataProvider */],
-            __WEBPACK_IMPORTED_MODULE_30__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]
+            __WEBPACK_IMPORTED_MODULE_22__providers_mentors_mentors__["a" /* MentorsProvider */],
+            __WEBPACK_IMPORTED_MODULE_23__providers_mentees_mentees__["a" /* MenteesProvider */],
+            __WEBPACK_IMPORTED_MODULE_24__providers_user_data_user_data__["a" /* UserDataProvider */],
+            __WEBPACK_IMPORTED_MODULE_25__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]
         ]
     })
 ], AppModule);
@@ -986,20 +851,15 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 269:
+/***/ 25:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorsProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_mentee_requests_mentee_requests__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_edit_edit__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_mentees_mentees__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1012,75 +872,83 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+/*
+  Generated class for the MentorsProvider provider.
 
-
-
-
-
-
-var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen, mentorsService, userService) {
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular DI.
+*/
+var MentorsProvider = (function () {
+    function MentorsProvider(http) {
+        this.http = http;
+        console.log('Hello MentorsProvider Provider');
+        this.data = null;
+    }
+    MentorsProvider.prototype.getMentors = function () {
         var _this = this;
-        this.mentorsService = mentorsService;
-        this.userService = userService;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */];
-        platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            statusBar.styleDefault();
-            _this.hideSplashScreen(splashScreen);
-            _this.userService.getMentees().then(function (data) {
-                _this.data = data[0];
+        if (this.data) {
+            return Promise.resolve(this.data);
+        }
+        return new Promise(function (resolve) {
+            _this.http.get('assets/data.json')
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                _this.data = data;
+                resolve(_this.data);
             });
         });
-    }
-    MyApp.prototype.setRoot = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */]);
-        this.navCtrl.popToRoot();
     };
-    MyApp.prototype.openRequestPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */]);
+    MentorsProvider.prototype.createMentor = function (mentor) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        this.http.post('https://corvids-coachcopy.herokuapp.com/api/mentors', JSON.stringify(mentor), { headers: headers })
+            .subscribe(function (res) {
+            console.log(res.json());
+        });
     };
-    MyApp.prototype.openEditPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pages_edit_edit__["a" /* EditPage */]);
+    MentorsProvider.prototype.updatePendingMentee = function (mentorID, menteeID) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var updateInfo = {
+            mentorID: mentorID,
+            menteeID: menteeID
+        };
+        this.http.post('https://corvids-coachcopy.herokuapp.com/api/acceptMentee', JSON.stringify(updateInfo), { headers: headers })
+            .subscribe(function (res) {
+            console.log(res.json());
+        });
     };
-    // signOut(){
-    //   this.navCtrl.setRoot(LoginPage)
-    // }
-    MyApp.prototype.setUserData = function (userData) {
-        console.log("This user data is: ", userData);
+    MentorsProvider.prototype.deletePendingMentee = function (mentorID, menteeID) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var updateInfo = {
+            mentorID: mentorID,
+            menteeID: menteeID
+        };
+        this.http.post('https://corvids-coachcopy.herokuapp.com/api/deletePendingMentee', JSON.stringify(updateInfo), { headers: headers })
+            .subscribe(function (res) {
+            console.log(res.json());
+        });
     };
-    MyApp.prototype.hideSplashScreen = function (splashScreen) {
-        if (splashScreen) {
-            setTimeout(function () {
-                splashScreen.hide();
-            }, 100);
-        }
-    };
-    return MyApp;
+    return MentorsProvider;
 }());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('content'),
-    __metadata("design:type", Object)
-], MyApp.prototype, "navCtrl", void 0);
-MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content padding>\n   <h2 *ngIf="data" ALIGN=CENTER style="font-size:25px;">{{data.first_name}}</h2> \n  \n  <img *ngIf="data" class = "user1-menu" [src]="data.pic">\n        \n        <button ion-button (click)="openRequestPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        Mentors\n      </button>\n      <br>\n      <button ion-button (click)="setRoot()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        Sign out\n      </button>\n        <br>\n      <button ion-button (click)="openEditPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        View Profile\n      </button>\n     \n  </ion-content>\n</ion-menu>\n<ion-nav [root]="rootPage" #content ></ion-nav>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/app/app.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_mentees_mentees__["a" /* MenteesProvider */]])
-], MyApp);
+MentorsProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+], MentorsProvider);
 
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=mentors.js.map
 
 /***/ }),
 
-/***/ 27:
+/***/ 26:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenteesProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1197,13 +1065,20 @@ MenteesProvider = __decorate([
 
 /***/ }),
 
-/***/ 28:
+/***/ 269:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_mentee_requests_mentee_requests__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_edit_edit__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_mentees_mentees__ = __webpack_require__(26);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1215,54 +1090,65 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var SearchPage = (function () {
-    function SearchPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.initializeItems();
-    }
-    SearchPage.prototype.itemSelected = function (item) {
-        console.log("Selected Item", item);
-    };
-    SearchPage.prototype.initializeItems = function () {
-        this.items = [
-            'Jennifer Marston',
-            'Jordan Martinez',
-            'Fredrick Casmarias',
-            'Michael Furey',
-            'Biology',
-            'Engineering',
-            'Math',
-            'Graphics',
-            'Physics',
-            'Theater'
-        ];
-    };
-    SearchPage.prototype.getItems = function (ev) {
-        // Reset items back to all of the items
-        this.initializeItems();
-        // set val to the value of the ev target
-        var val = ev.target.value;
-        // if the value is an empty string don't filter the items
-        if (val && val.trim() != '') {
-            this.items = this.items.filter(function (item) {
-                return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+
+
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen, mentorsService, userService) {
+        var _this = this;
+        this.mentorsService = mentorsService;
+        this.userService = userService;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */];
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            statusBar.styleDefault();
+            _this.hideSplashScreen(splashScreen);
+            _this.userService.getMentees().then(function (data) {
+                _this.data = data[0];
             });
+        });
+    }
+    MyApp.prototype.setRoot = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */]);
+        this.navCtrl.popToRoot();
+    };
+    MyApp.prototype.openRequestPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */]);
+    };
+    MyApp.prototype.openEditPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pages_edit_edit__["a" /* EditPage */]);
+    };
+    // signOut(){
+    //   this.navCtrl.setRoot(LoginPage)
+    // }
+    MyApp.prototype.setUserData = function (userData) {
+        console.log("This user data is: ", userData);
+    };
+    MyApp.prototype.hideSplashScreen = function (splashScreen) {
+        if (splashScreen) {
+            setTimeout(function () {
+                splashScreen.hide();
+            }, 100);
         }
     };
-    SearchPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad SearchPage');
-    };
-    return SearchPage;
+    return MyApp;
 }());
-SearchPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-search',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/search/search.html"*/'<!--\n  Generated template for the SearchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n<ion-list>\n  <button ion-item *ngFor="let item of items"(click)="itemSelected(item)">\n    {{ item }}\n    </button>\n</ion-list> \n</ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/search/search.html"*/,
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('content'),
+    __metadata("design:type", Object)
+], MyApp.prototype, "navCtrl", void 0);
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content padding>\n   <h2 *ngIf="data" ALIGN=CENTER style="font-size:25px;">{{data.first_name}}</h2> \n  \n  <img *ngIf="data" class = "user1-menu" [src]="data.pic">\n        \n        <button ion-button (click)="openRequestPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        Mentors\n      </button>\n      <br>\n      <button ion-button (click)="setRoot()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        Sign out\n      </button>\n        <br>\n      <button ion-button (click)="openEditPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        View Profile\n      </button>\n     \n  </ion-content>\n</ion-menu>\n<ion-nav [root]="rootPage" #content ></ion-nav>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-], SearchPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_mentees_mentees__["a" /* MenteesProvider */]])
+], MyApp);
 
-//# sourceMappingURL=search.js.map
+//# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
@@ -1272,11 +1158,11 @@ SearchPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user_data_user_data__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user_data_user_data__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1332,297 +1218,11 @@ MentorsPage = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EngineeringMentorsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var EngineeringMentorsPage = (function () {
-    function EngineeringMentorsPage(navCtrl, navParams, mentorsService, ModalController) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.mentorsService = mentorsService;
-        this.ModalController = ModalController;
-        this.path = this.navParams.get("path");
-    }
-    EngineeringMentorsPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.mentorsService.getMentors().then(function (data) {
-            _this.mentors = data;
-            console.log(_this.mentors);
-        });
-    };
-    EngineeringMentorsPage.prototype.openMentorProfiles = function (mentor) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], mentor);
-    };
-    EngineeringMentorsPage.prototype.openSearchPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__search_search__["a" /* SearchPage */]);
-    };
-    return EngineeringMentorsPage;
-}());
-EngineeringMentorsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-engineering-mentors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/engineering-mentors/engineering-mentors.html"*/'<ion-header>\n<ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{path}}</ion-title>\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <div *ngFor="let mentor of mentors">\n  <ion-card  class="cardcolor" (click)="openMentorProfiles(mentor)" *ngIf="(mentor.path == path)">\n    <ion-card-content>\n      <ion-grid>\n        <ion-row class="row">\n          <ion-col col-4>\n              <img [src]="mentor.pic" class="mentor-pic">\n          </ion-col>\n          <ion-col col-8>\n              <h2 style="font-size:25px;">{{mentor.first_name}} {{mentor.last_name}}</h2>\n              <p >{{mentor.major}} </p>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-card-content>\n    </ion-card>\n  </div>\n</ion-content>\n\n\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/engineering-mentors/engineering-mentors.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
-], EngineeringMentorsPage);
-
-//# sourceMappingURL=engineering-mentors.js.map
-
-/***/ }),
-
-/***/ 283:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GraphicsMentorsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var GraphicsMentorsPage = (function () {
-    function GraphicsMentorsPage(navCtrl, navParams, mentorsService, ModalController) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.mentorsService = mentorsService;
-        this.ModalController = ModalController;
-    }
-    GraphicsMentorsPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.mentorsService.getMentors().then(function (data) {
-            console.log(data);
-            _this.mentors = data;
-        });
-    };
-    GraphicsMentorsPage.prototype.openMentorProfiles = function (mentor) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], mentor);
-    };
-    GraphicsMentorsPage.prototype.openSearchPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__search_search__["a" /* SearchPage */]);
-    };
-    return GraphicsMentorsPage;
-}());
-GraphicsMentorsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-graphics-mentors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/graphics-mentors/graphics-mentors.html"*/'<ion-header>\n<ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Graphics Mentors</ion-title>\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <ion-card *ngFor="let mentor of mentors" class="cardcolor">\n    <ion-card-content>\n  <!--For this, we push the whole mentor object instead of just an idea-->\n  <img  src="assets/images/user1.svg" (click)="openMentorProfiles(mentor)" align="left">\n  <br>\n  <!-- <img class="greenos" src = "assets/images/greeno.png" align="right"> -->\n  <h2 ALIGN=CENTER style="font-size:25px;">{{mentor.first_name}} {{mentor.last_name}}</h2>\n  <p ALIGN=CENTER style="font-size:20px;">{{mentor.major}} </p>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/graphics-mentors/graphics-mentors.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
-], GraphicsMentorsPage);
-
-//# sourceMappingURL=graphics-mentors.js.map
-
-/***/ }),
-
-/***/ 284:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MathMentorsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var MathMentorsPage = (function () {
-    function MathMentorsPage(navCtrl, navParams, mentorsService, ModalController) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.mentorsService = mentorsService;
-        this.ModalController = ModalController;
-    }
-    MathMentorsPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.mentorsService.getMentors().then(function (data) {
-            console.log(data);
-            _this.mentors = data;
-        });
-    };
-    MathMentorsPage.prototype.openMentorProfiles = function (mentor) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], mentor);
-    };
-    MathMentorsPage.prototype.openSearchPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__search_search__["a" /* SearchPage */]);
-    };
-    return MathMentorsPage;
-}());
-MathMentorsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-math-mentors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/math-mentors/math-mentors.html"*/'<ion-header>\n<ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Math Mentors</ion-title>\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <ion-card *ngFor="let mentor of mentors" class="cardcolor">\n    <ion-card-content>\n  <!--For this, we push the whole mentor object instead of just an idea-->\n  <img  src="assets/images/user1.svg" (click)="openMentorProfiles(mentor)" align="left">\n  <br>\n  <!-- <img class="greenos" src = "assets/images/greeno.png" align="right"> -->\n  <h2 ALIGN=CENTER style="font-size:25px;">{{mentor.first_name}} {{mentor.last_name}}</h2>\n  <p ALIGN=CENTER style="font-size:20px;">{{mentor.major}} </p>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/math-mentors/math-mentors.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
-], MathMentorsPage);
-
-//# sourceMappingURL=math-mentors.js.map
-
-/***/ }),
-
-/***/ 285:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PhysicsMentorsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var PhysicsMentorsPage = (function () {
-    function PhysicsMentorsPage(navCtrl, navParams, mentorsService, ModalController) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.mentorsService = mentorsService;
-        this.ModalController = ModalController;
-    }
-    PhysicsMentorsPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.mentorsService.getMentors().then(function (data) {
-            console.log(data);
-            _this.mentors = data;
-        });
-    };
-    PhysicsMentorsPage.prototype.openMentorProfiles = function (mentor) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], mentor);
-    };
-    PhysicsMentorsPage.prototype.openSearchPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__search_search__["a" /* SearchPage */]);
-    };
-    return PhysicsMentorsPage;
-}());
-PhysicsMentorsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-physics-mentors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/physics-mentors/physics-mentors.html"*/'<ion-header>\n<ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Physics Mentors</ion-title>\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <ion-card *ngFor="let mentor of mentors" class="cardcolor">\n    <ion-card-content>\n  <!--For this, we push the whole mentor object instead of just an idea-->\n  <img  src="assets/images/user1.svg" (click)="openMentorProfiles(mentor)" align="left">\n  <br>\n  <!-- <img class="greenos" src = "assets/images/greeno.png" align="right"> -->\n  <h2 ALIGN=CENTER style="font-size:25px;">{{mentor.first_name}} {{mentor.last_name}}</h2>\n  <p ALIGN=CENTER style="font-size:20px;">{{mentor.major}} </p>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/physics-mentors/physics-mentors.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
-], PhysicsMentorsPage);
-
-//# sourceMappingURL=physics-mentors.js.map
-
-/***/ }),
-
-/***/ 286:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TheaterMentorsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var TheaterMentorsPage = (function () {
-    function TheaterMentorsPage(navCtrl, navParams, mentorsService, ModalController) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.mentorsService = mentorsService;
-        this.ModalController = ModalController;
-    }
-    TheaterMentorsPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.mentorsService.getMentors().then(function (data) {
-            console.log(data);
-            _this.mentors = data;
-        });
-    };
-    TheaterMentorsPage.prototype.openMentorProfiles = function (mentor) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], mentor);
-    };
-    TheaterMentorsPage.prototype.openSearchPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__search_search__["a" /* SearchPage */]);
-    };
-    return TheaterMentorsPage;
-}());
-TheaterMentorsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-theater-mentors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/theater-mentors/theater-mentors.html"*/'<ion-header>\n<ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Theater Mentors</ion-title>\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <ion-card *ngFor="let mentor of mentors" class="cardcolor">\n    <ion-card-content>\n  <!--For this, we push the whole mentor object instead of just an idea-->\n  <img  src="assets/images/user1.svg" (click)="openMentorProfiles(mentor)" align="left">\n  <br>\n  <!-- <img class="greenos" src = "assets/images/greeno.png" align="right"> -->\n  <h2 ALIGN=CENTER style="font-size:25px;">{{mentor.first_name}} {{mentor.last_name}}</h2>\n  <p ALIGN=CENTER style="font-size:20px;">{{mentor.major}} </p>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/theater-mentors/theater-mentors.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
-], TheaterMentorsPage);
-
-//# sourceMappingURL=theater-mentors.js.map
-
-/***/ }),
-
-/***/ 287:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RequestPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1672,13 +1272,13 @@ RequestPage = __decorate([
 
 /***/ }),
 
-/***/ 288:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1710,15 +1310,121 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 56:
+/***/ 33:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorProfilePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__search_search__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__ = __webpack_require__(26);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var MentorProfilePage = (function () {
+    function MentorProfilePage(alertCtrl, navCtrl, navParams, platform, mentorsService, ModalController, smsVar, menteesService) {
+        var _this = this;
+        this.alertCtrl = alertCtrl;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.platform = platform;
+        this.mentorsService = mentorsService;
+        this.ModalController = ModalController;
+        this.smsVar = smsVar;
+        this.menteesService = menteesService;
+        this.mentors = [];
+        this.text = {
+            "number": "",
+            "message": "",
+        };
+        this.disable = false;
+        platform.ready().then(function () {
+        });
+        this.mentor = this.navParams.data;
+        this.menteesService.getMentees().then(function (data) {
+            _this.mentee = data[0];
+            if (_this.mentee.pendingMentors.length > 0) {
+                for (var _i = 0, _a = _this.mentee.pendingMentors; _i < _a.length; _i++) {
+                    var pending = _a[_i];
+                    console.log(pending);
+                    if (pending.pic == _this.mentor.pic) {
+                        _this.disable = true;
+                        break;
+                    }
+                }
+            }
+        });
+    }
+    MentorProfilePage.prototype.openSearchPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__search_search__["a" /* SearchPage */]);
+    };
+    MentorProfilePage.prototype.sendRequest = function () {
+        this.disable = true;
+        this.menteesService.pushMentor(this.mentor);
+        var msg = "Your request to connect with " + this.mentor.first_name + ' ' + this.mentor.last_name + " has been sent.";
+        var alert = this.alertCtrl.create({
+            title: 'Request Sent',
+            subTitle: msg,
+            buttons: ['Ok']
+        });
+        alert.present();
+    };
+    MentorProfilePage.prototype.acceptRequest = function () {
+        this.mentorsService.updatePendingMentee(this.mentor._id, '598172c2f36d2839ce8b9d1f');
+    };
+    MentorProfilePage.prototype.sendSMS = function () {
+        this.sendMessage = 'Hi ' + this.mentor.first_name + ' my name is';
+        var options = {
+            replaceLineBreaks: false,
+            android: {
+                intent: 'INTENT' // Opens Default sms app
+                //intent: '' // Sends sms without opening default sms app
+            }
+        };
+        this.smsVar.send(this.mentor.phone_number, this.sendMessage, options)
+            .then(function () {
+        }, function () {
+        });
+    };
+    return MentorProfilePage;
+}());
+MentorProfilePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-mentor-profiles',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-profiles/mentor-profiles.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <img class="user1"[src]="mentor.pic">\n  <br>\n  <h1 style="font-size:24px;">{{mentor.first_name}} {{mentor.last_name}}</h1>\n  <p style="font-size:24px;">Education: {{mentor.education}} {{mentor.major}} </p>\n  <p style="font-size:24px;">Age: {{mentor.age}}\n    <p style="font-size:20px;">About: {{mentor.bio}}</p>\n    <ion-row>\n      <ion-col width-50 style="text-align: center">\n        <button center ion-button (click)="sendRequest()" [disabled] ="disable"> Request Connection</button>\n      </ion-col>\n    </ion-row>\n    <!-- <button ion-button (click)="openMap()">See Location</button> -->\n\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-profiles/mentor-profiles.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */], __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */]])
+], MentorProfilePage);
+
+//# sourceMappingURL=mentor-profiles.js.map
+
+/***/ }),
+
+/***/ 55:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserDataProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

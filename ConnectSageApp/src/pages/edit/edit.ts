@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MenteesProvider } from '../../providers/mentees/mentees';
+import {ConnectSageProvider} from '../../providers/connect-sage-api/connect-sage-api';
 /**
  * Generated class for the EditPage page.
  *
@@ -14,10 +14,11 @@ import { MenteesProvider } from '../../providers/mentees/mentees';
 })
 export class EditPage {
   data:any;
-  constructor(public menteesService: MenteesProvider,public navCtrl: NavController, public navParams: NavParams) {
-    this.menteesService.getMentees().then((data) => {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public provider: ConnectSageProvider) {
+    this.provider.getMentees().then((data) => {
       console.log(data);
       this.data = data[0];
+      console.log(this.data.first_name)
     });
   }
 

@@ -40,6 +40,21 @@ var Mentor = mongoose.model('Mentor',{
     pic: String,
     path: String
 })
+
+var Mentee = mongoose.model('Mentee',{
+        // acceptedMentors:[],
+        age: Number,
+        bio: String,
+        dream_career: String,
+        education: String,
+        first_name: String,
+        last_name: String,
+        password: String,
+        // "pendingMentors":[],
+        phone_number: String,
+        username: String,
+        pic: String
+})
  
 // Routes
  
@@ -70,6 +85,18 @@ var Mentor = mongoose.model('Mentor',{
                });
            });
  
+    app.get('/api/mentees', function(req, res){
+        console.log("fetching mentees");
+
+        Mentee.find(function(err, mentees){
+            
+            if(err)
+                res.send(err)
+
+            res.json(mentees);
+        })
+    });
+
     app.post('/api/majors', function(req, res) {
  
         console.log("creating major");
@@ -116,7 +143,7 @@ var Mentor = mongoose.model('Mentor',{
                        res.send(err);
         
 
-                   Mentor.find(function(err, mamentorjor) {
+                   Mentor.find(function(err, mentor) {
                        if (err)
                            res.send(err)
                        res.json(mentor);
@@ -124,6 +151,40 @@ var Mentor = mongoose.model('Mentor',{
                });
         
            });
+
+    app.post('/api/mentees', function(req, res) {
+    
+            console.log("creating mentees");
+
+            
+    
+
+            Mentee.create({
+                acceptedMentees: [],
+                age: req.body.age,
+                bio: req.body.bio,
+                dream_career: req.body.dream_career,
+                education: req.body.education,
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                password: req.body.password,
+                pendingMentors: [],
+                phone_number: req.body.phone_number,
+                username: req.body.username,
+                pic: req.body.pic
+            }, function(err, mentee) {
+                if (err)
+                    res.send(err);
+    
+
+                Mentee.find(function(err, mentee) {
+                    if (err)
+                        res.send(err)
+                    res.json(mentee);
+                });
+            });
+    
+               });           
  
  
 

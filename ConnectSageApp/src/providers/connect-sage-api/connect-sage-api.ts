@@ -26,7 +26,17 @@ export class ConnectSageProvider {
                 resolve(data);
             });
     });
-}
+    }
+
+    getMentees(){
+        return new Promise(resolve => {
+            this.http.get('http://localhost:8080/api/mentees')
+                .map(res => res.json())
+                .subscribe(data => {
+                    resolve(data);
+                });
+        });
+    }
 
 
 }

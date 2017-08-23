@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { MentorsPage } from '../mentors/mentors';
-import { EngineeringMentorsPage } from '../engineering-mentors/engineering-mentors';
-import { GraphicsMentorsPage } from '../graphics-mentors/graphics-mentors';
-import { MathMentorsPage } from '../math-mentors/math-mentors';
-import { PhysicsMentorsPage } from '../physics-mentors/physics-mentors';
-import { TheaterMentorsPage } from '../theater-mentors/theater-mentors';
 import { SearchPage } from '../search/search';
-import {ConnectSageProvider} from '../../providers/connect-sage-api/connect-sage-api' 
+import {ConnectSageProvider} from '../../providers/connect-sage-api/connect-sage-api'; 
 import { MentorListPage } from '../mentor-list/mentor-list'
 
 import { UserDataProvider } from '../../providers/user-data/user-data';
