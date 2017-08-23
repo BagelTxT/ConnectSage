@@ -1,0 +1,21 @@
+[{
+    "major": "Engineering",
+	"image": "assets/images/Engineering.png"
+},
+{
+    "major": "Biology",
+	"image": "assets/images/frog.png"
+},
+{
+    "major": "Graphics",
+	"image": "assets/images/Graphics.png"
+},
+{
+    "major": "Math",
+	"image": "assets/images/math.png"
+},
+{
+    "major": "Physics",
+	"image": "assets/images/Physics.png"
+}]
+//Can add theater major as well

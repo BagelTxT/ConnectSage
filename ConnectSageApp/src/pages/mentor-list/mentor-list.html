@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="primary">
+          
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{path}}</ion-title>
+        <ion-buttons end>
+          <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>
+          </button>
+          </ion-buttons>
+      </ion-navbar>
+    
+    </ion-header>
+
+
+<ion-content padding>
+    <div *ngFor="let mentor of mentors">
+        <ion-card class="cardcolor" (click)="openMentorProfiles(mentor)" *ngIf="(mentor.path == path)">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row class="row">
+                <ion-col col-4>
+                    <img [src]="mentor.pic" class="mentor-pic">
+                </ion-col>
+                <ion-col col-8>
+                    <h2 class="mentor-list">{{mentor.first_name}} {{mentor.last_name}}</h2>
+                    <p >{{mentor.major}} </p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+          </ion-card>
+        </div>
+</ion-content>

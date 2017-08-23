@@ -1,0 +1,26 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+   <h2 *ngIf="data" ALIGN=CENTER style="font-size:25px;">{{data.first_name}}</h2> 
+  
+  <img *ngIf="data" class = "user1-menu" [src]="data.pic">
+        
+        <button ion-button (click)="openRequestPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >
+        Mentors
+      </button>
+      <br>
+      <button ion-button (click)="setRoot()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >
+        Sign out
+      </button>
+        <br>
+      <button ion-button (click)="openEditPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >
+        View Profile
+      </button>
+     
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content ></ion-nav>

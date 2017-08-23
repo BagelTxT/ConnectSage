@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+      
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+      <ion-title>{{data.first_name}}</ion-title>
+
+    <ion-buttons end>
+      <button (click)="openSearchPage()" ion-button clear="true"> 
+      <ion-icon name="search"></ion-icon>
+      </button>
+      </ion-buttons>
+  
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+<img class = "user1" [src] = "data.pic">
+
+<!-- <ion-input style= "font-size:24px;" type="text" placeholder="Name: Jordy Martinez" name="First Name"></ion-input>
+<ion-input style= "font-size:24px;" type="text" placeholder="Education: High School Diploma(In Progress)" name="First Name"></ion-input>
+<ion-input style= "font-size:24px;" type="text" placeholder="age: 17" name="First Name"></ion-input>
+<ion-input style= "font-size:24px;" type="text" placeholder="About: born Hawthrone, California in 2001. Loves soccer and computer programming." name="First Name"></ion-input> -->
+<p><b>Age:</b> {{data.age}}</p>
+<p><b>Education:</b> {{data.education}}</p>
+<p><b>Dream Job:</b> {{data.dream_career}}</p>
+<p><b>Bio:</b> {{data.bio}}</p>
+
+  <ion-row>
+     <ion-col width-50 style="text-align: center">
+  <button center ion-button>Save Changes</button>
+     </ion-col>
+  </ion-row>
+
+  <!-- <button ion-button (click)="openMap()">See Location</button> -->
+
+</ion-content>

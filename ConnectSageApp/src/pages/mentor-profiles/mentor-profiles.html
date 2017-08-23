@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-buttons end>
+      <button (click)="openSearchPage()" ion-button clear="true"> 
+      <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <img class="user1"[src]="mentor.pic">
+  <br>
+  <h1 style="font-size:24px;">{{mentor.first_name}} {{mentor.last_name}}</h1>
+  <p style="font-size:24px;">Education: {{mentor.education}} {{mentor.major}} </p>
+  <p style="font-size:24px;">Age: {{mentor.age}}
+    <p style="font-size:20px;">About: {{mentor.bio}}</p>
+    <ion-row>
+      <ion-col width-50 style="text-align: center">
+        <button center ion-button (click)="sendRequest()" [disabled] ="disable"> Request Connection</button>
+      </ion-col>
+    </ion-row>
+    <!-- <button ion-button (click)="openMap()">See Location</button> -->
+
+</ion-content>
