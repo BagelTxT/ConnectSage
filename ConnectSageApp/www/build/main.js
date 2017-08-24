@@ -129,10 +129,9 @@ MajorsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-majors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/majors/majors.html"*/'<ion-header>\n  <ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>Career Paths</ion-title>\n\n    <!-- <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true">\n      <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons> -->\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n<ion-list>\n  <ion-grid>\n\n    <ion-row *ngFor="let majorList of splitMajors" >\n      <ion-col *ngFor="let major of majorList" col-6><img src = "{{major.image}}" (click)="openPage(major.major)" align="middle">\n      <h2 ALIGN=CENTER style="font-size:18px;">{{major.major}}</h2>\n      </ion-col>\n    </ion-row>\n\n    \n  </ion-grid>\n  </ion-list>\n  </ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/majors/majors.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__["a" /* UserDataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__["a" /* UserDataProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__["a" /* UserDataProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]])
 ], MajorsPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=majors.js.map
 
 /***/ }),
@@ -165,7 +164,8 @@ var ConnectSageProvider = (function () {
     ConnectSageProvider.prototype.getMajors = function () {
         var _this = this;
         return new Promise(function (resolve) {
-            _this.http.get('http://localhost:8080/api/majors')
+            // this.http.get('http://localhost:3000/api/majors')
+            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/majors')
                 .map(function (res) { return res.json(); })
                 .subscribe(function (data) {
                 resolve(data);
@@ -175,7 +175,8 @@ var ConnectSageProvider = (function () {
     ConnectSageProvider.prototype.getMentors = function () {
         var _this = this;
         return new Promise(function (resolve) {
-            _this.http.get('http://localhost:8080/api/mentors')
+            // this.http.get('http://localhost:3000/api/mentors')
+            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors')
                 .map(function (res) { return res.json(); })
                 .subscribe(function (data) {
                 resolve(data);
@@ -185,7 +186,8 @@ var ConnectSageProvider = (function () {
     ConnectSageProvider.prototype.getMentees = function () {
         var _this = this;
         return new Promise(function (resolve) {
-            _this.http.get('http://localhost:8080/api/mentees')
+            // this.http.get('http://localhost:3000/api/mentees')
+            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentees')
                 .map(function (res) { return res.json(); })
                 .subscribe(function (data) {
                 resolve(data);
@@ -279,19 +281,19 @@ var MentorRequestsPage = (function () {
         this.acceptedMentees.push(mentee);
         this.aMentCopy.push(mentee);
     };
-    MentorRequestsPage.prototype.openMenteeProfiles = function (mentor) {
+    MentorRequestsPage.prototype.openMentorProfiles = function (mentor) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], mentor);
     };
     return MentorRequestsPage;
 }());
 MentorRequestsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mentor-requests',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-requests/mentor-requests.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Connections</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-item-group>\n    <ion-item-divider color="light">Pending</ion-item-divider>\n    \n    <ion-item  *ngFor="let pending of pendingMentees" (click)="openMenteeProfiles(pending)">{{pending.first_name}} {{pending.last_name}}<img class="adder" (click)="acceptMentee(pending)" src = "assets/images/greenPlus.png" align="left">\n      <img class="deleter"  src = "assets/images/redX.png" align="right">\n    </ion-item>\n\n    <ion-item-divider color="light">Accepted</ion-item-divider>\n    <ion-item *ngFor="let accepted of acceptedMentees" (click)="openMenteeProfiles(accepted)">{{accepted.first_name}} {{accepted.last_name}}<ion-icon name="text" item-end></ion-icon></ion-item>\n  </ion-item-group>\n\n</ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-requests/mentor-requests.html"*/,
+        selector: 'page-mentor-requests',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-requests/mentor-requests.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Connections</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-item-group>\n    <ion-item-divider color="light">Pending</ion-item-divider>\n    \n    <ion-item  *ngFor="let pending of pendingMentees" (click)="openMentorProfiles(pending)">{{pending.first_name}} {{pending.last_name}}<img class="adder" (click)="acceptMentee(pending)" src = "assets/images/greenPlus.png" align="left">\n      <img class="deleter"  src = "assets/images/redX.png" align="right">\n    </ion-item>\n\n    <ion-item-divider color="light">Accepted</ion-item-divider>\n    <ion-item *ngFor="let accepted of acceptedMentees" (click)="openMenteeProfiles(accepted)">{{accepted.first_name}} {{accepted.last_name}}<ion-icon name="text" item-end></ion-icon></ion-item>\n  </ion-item-group>\n\n</ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-requests/mentor-requests.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__["a" /* MenteesProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__["a" /* MentorsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__["a" /* MentorsProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__["a" /* MenteesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__["a" /* MenteesProvider */]) === "function" && _f || Object])
 ], MentorRequestsPage);
 
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=mentor-requests.js.map
 
 /***/ }),
@@ -470,10 +472,12 @@ var EditPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.provider = provider;
+        this.loaded = false;
         this.provider.getMentees().then(function (data) {
             console.log(data);
             _this.data = data[0];
             console.log(_this.data.first_name);
+            _this.loaded = true;
         });
     }
     EditPage.prototype.ionViewDidLoad = function () {
@@ -483,7 +487,7 @@ var EditPage = (function () {
 }());
 EditPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-edit',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n      <ion-title>{{data.first_name}}</ion-title>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  \n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n<img class = "user1" [src] = "data.pic">\n\n<p><b>Age:</b> {{data.age}}</p>\n<p><b>Education:</b> {{data.education}}</p>\n<p><b>Dream Job:</b> {{data.dream_career}}</p>\n<p><b>Bio:</b> {{data.bio}}</p>\n\n  <ion-row>\n     <ion-col width-50 style="text-align: center">\n  <button center ion-button>Save Changes</button>\n     </ion-col>\n  </ion-row>\n\n\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/,
+        selector: 'page-edit',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/'<ion-header>\n\n  <ion-navbar color="primary" (Load)="enableBody()">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n      <ion-title *ngIf="loaded">{{data.first_name}}</ion-title>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  \n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <div *ngIf="loaded">\n<img class = "user1" [src] = "data.pic">\n\n<p><b>Age:</b> {{data.age}}</p>\n<p><b>Education:</b> {{data.education}}</p>\n<p><b>Dream Job:</b> {{data.dream_career}}</p>\n<p><b>Bio:</b> {{data.bio}}</p>\n\n  <ion-row>\n     <ion-col width-50 style="text-align: center">\n  <button center ion-button>Save Changes</button>\n     </ion-col>\n  </ion-row>\n</div>\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]])
 ], EditPage);
@@ -1409,9 +1413,10 @@ MentorProfilePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-mentor-profiles',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-profiles/mentor-profiles.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <img class="user1"[src]="mentor.pic">\n  <br>\n  <h1 style="font-size:24px;">{{mentor.first_name}} {{mentor.last_name}}</h1>\n  <p style="font-size:24px;">Education: {{mentor.education}} {{mentor.major}} </p>\n  <p style="font-size:24px;">Age: {{mentor.age}}\n    <p style="font-size:20px;">About: {{mentor.bio}}</p>\n    <ion-row>\n      <ion-col width-50 style="text-align: center">\n        <button center ion-button (click)="sendRequest()" [disabled] ="disable"> Request Connection</button>\n      </ion-col>\n    </ion-row>\n    <!-- <button ion-button (click)="openMap()">See Location</button> -->\n\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-profiles/mentor-profiles.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */], __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */]) === "function" && _h || Object])
 ], MentorProfilePage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=mentor-profiles.js.map
 
 /***/ }),

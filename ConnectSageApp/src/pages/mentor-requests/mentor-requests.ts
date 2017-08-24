@@ -66,7 +66,7 @@ export class MentorRequestsPage {
     this.aMentCopy.push(mentee);
   }
 
-  openMenteeProfiles(mentor) {
+  openMentorProfiles(mentor) {
     this.navCtrl.push(MentorProfilePage, mentor);
   }
 }

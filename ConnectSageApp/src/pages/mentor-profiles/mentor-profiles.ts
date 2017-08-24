@@ -25,10 +25,8 @@ export class MentorProfilePage {
   };
   disable = false;
 
-
   constructor(public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public mentorsService: MentorsProvider, public ModalController: ModalController, private smsVar: SMS, public menteesService: MenteesProvider) {
     platform.ready().then(() => {
-
     });
     this.mentor = this.navParams.data;
     this.menteesService.getMentees().then((data) => {
@@ -59,8 +57,6 @@ export class MentorProfilePage {
       buttons: ['Ok']
     });
     alert.present();
-
-
   }
 
   acceptRequest() {

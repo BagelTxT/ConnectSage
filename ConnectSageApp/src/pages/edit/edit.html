@@ -1,12 +1,12 @@
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="primary" (Load)="enableBody()">
       
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
 
-      <ion-title>{{data.first_name}}</ion-title>
+      <ion-title *ngIf="loaded">{{data.first_name}}</ion-title>
 
     <ion-buttons end>
       <button (click)="openSearchPage()" ion-button clear="true"> 
@@ -19,7 +19,7 @@
 
 
 <ion-content padding>
-
+  <div *ngIf="loaded">
 <img class = "user1" [src] = "data.pic">
 
 <p><b>Age:</b> {{data.age}}</p>
@@ -32,6 +32,5 @@
   <button center ion-button>Save Changes</button>
      </ion-col>
   </ion-row>
-
-
+</div>
 </ion-content>
