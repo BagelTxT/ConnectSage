@@ -1,7 +1,8 @@
+<!-- View Profile Page -->
 <ion-header>
 
   <ion-navbar color="primary" (Load)="enableBody()">
-      
+
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -9,11 +10,11 @@
       <ion-title *ngIf="loaded">{{data.first_name}}</ion-title>
 
     <ion-buttons end>
-      <button (click)="openSearchPage()" ion-button clear="true"> 
+      <button (click)="openSearchPage()" ion-button clear="true">
       <ion-icon name="search"></ion-icon>
       </button>
       </ion-buttons>
-  
+
   </ion-navbar>
 </ion-header>
 

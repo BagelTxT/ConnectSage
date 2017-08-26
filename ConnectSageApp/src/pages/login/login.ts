@@ -4,11 +4,12 @@ import { MajorsPage } from '../majors/majors';
 import { MentorRequestsPage } from '../mentor-requests/mentor-requests';
 import { SignUpPage } from '../signup/signup';
 
-import { MentorsProvider } from '../../providers/mentors/mentors';
-import { MenteesProvider } from '../../providers/mentees/mentees';
+// import { MentorsProvider } from '../../providers/mentors/mentors';
+// import { MenteesProvider } from '../../providers/mentees/mentees';
+import { ConnectSageProvider } from '../../providers/connect-sage-api/connect-sage-api';
 import { UserDataProvider } from '../../providers/user-data/user-data';
 // import { AuthService } from '../../providers/auth-service';
- 
+
 //IonicPage()
 @Component({
   selector: 'page-login',
@@ -20,17 +21,14 @@ export class LoginPage {
   loading: Loading;
   user: any;
   registerCredentials = { username: 'Alexander_Watley', password: 'g00gle13' };
- 
-  constructor(private nav: NavController, private alertCtrl: AlertController, private loadingCtrl: LoadingController, 
-      
-    
-    public mentorsService: MentorsProvider, public menteesService: MenteesProvider, public userService: UserDataProvider) {
-    this.mentorsService.getMentors().then((data) => {
- 
+
+  constructor(private nav: NavController, private alertCtrl: AlertController, private loadingCtrl: LoadingController
+    , public connectSageProvider: ConnectSageProvider, public userService: UserDataProvider) {
+    this.connectSageProvider.getMentors().then((data) => {
+
       this.mentors = data;
     });
-    this.menteesService.getMentees().then((data) => {
-
+    this.connectSageProvider.getMentees().then((data) => {
       this.mentees = data;
     });
    }
@@ -38,7 +36,7 @@ export class LoginPage {
   public createAccount() {
     this.nav.push(SignUpPage);
   }
- 
+
   public login() {
     for(let mentor of this.mentors){
       if(mentor.username === this.registerCredentials.username && mentor.password === this.registerCredentials.password) {
@@ -48,7 +46,7 @@ export class LoginPage {
 
         break;
       }
-    } 
+    }
     for(let mentee of this.mentees){
       if(mentee.username === this.registerCredentials.username && mentee.password === this.registerCredentials.password) {
         this.userService.login(mentee);
@@ -57,7 +55,7 @@ export class LoginPage {
 
         break;
       }
-    } 
-    
+    }
+
   }
 }

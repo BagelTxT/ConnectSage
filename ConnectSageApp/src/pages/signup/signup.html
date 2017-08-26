@@ -54,12 +54,25 @@
               <ion-input type="text" placeholder="Bio:" name="Bio" [(ngModel)]="registerCredentials.bio" required></ion-input>
             </ion-item>
             <br>
-
-
+            <div *ngIf="role == 'Mentor'">
+            <ion-item >
+              <ion-input type="text" placeholder="Major:" name="Major" [(ngModel)]="registerCredentials.major" required></ion-input>
+            </ion-item>
+            <br />
+          </div>
           </ion-list>
         </ion-col>
       </ion-row>
+      <div *ngIf="role == 'Mentor'">
+      <ion-item>
+        <ion-label>Path</ion-label>
+        <ion-select [(ngModel)]="path" name="path">
+          <ion-option *ngFor="let path of paths" value={{path.major}}>{{path.major}}</ion-option>
 
+        </ion-select>
+      </ion-item>
+      <br />
+    </div>
       <ion-item>
         <ion-label>Role</ion-label>
         <ion-select [(ngModel)]="role" name="role">
@@ -70,7 +83,7 @@
       </ion-item>
       <ion-row>
         <ion-col class="signup-col" col align="center">
-            <button color (click)="signUp()" ion-button color="light" large outline class="submit-btn" type="submit" [disabled]="!registerForm.form.valid">Sign Up</button>    
+            <button color (click)="signUp()" ion-button color="light" large outline class="submit-btn" type="submit" [disabled]="!registerForm.form.valid">Sign Up</button>
         </ion-col>
       </ion-row>
 

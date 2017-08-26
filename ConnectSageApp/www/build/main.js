@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -60,7 +60,7 @@ var SearchPage = (function () {
 }());
 SearchPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-search',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/search/search.html"*/'<!--\n  Generated template for the SearchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>search</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n<ion-list>\n  <button ion-item *ngFor="let item of items"(click)="itemSelected(item)">\n    {{ item }}\n    </button>\n</ion-list> \n</ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/search/search.html"*/,
+        selector: 'page-search',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\search\search.html"*/'<!--\n\n  Generated template for the SearchPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>search</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n\n<ion-list>\n\n  <button ion-item *ngFor="let item of items"(click)="itemSelected(item)">\n\n    {{ item }}\n\n    </button>\n\n</ion-list> \n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\search\search.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
 ], SearchPage);
@@ -69,16 +69,16 @@ SearchPage = __decorate([
 
 /***/ }),
 
-/***/ 107:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MajorsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_list_mentor_list__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -127,81 +127,12 @@ var MajorsPage = (function () {
 }());
 MajorsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-majors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/majors/majors.html"*/'<ion-header>\n  <ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>Career Paths</ion-title>\n\n    <!-- <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true">\n      <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons> -->\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n<ion-list>\n  <ion-grid>\n\n    <ion-row *ngFor="let majorList of splitMajors" >\n      <ion-col *ngFor="let major of majorList" col-6><img src = "{{major.image}}" (click)="openPage(major.major)" align="middle">\n      <h2 ALIGN=CENTER style="font-size:18px;">{{major.major}}</h2>\n      </ion-col>\n    </ion-row>\n\n    \n  </ion-grid>\n  </ion-list>\n  </ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/majors/majors.html"*/,
+        selector: 'page-majors',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\majors\majors.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n      \n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n\n\n    <ion-title>Career Paths</ion-title>\n\n\n\n    <!-- <ion-buttons end>\n\n      <button (click)="openSearchPage()" ion-button clear="true">\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>\n\n      </ion-buttons> -->\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<ion-list>\n\n  <ion-grid>\n\n\n\n    <ion-row *ngFor="let majorList of splitMajors" >\n\n      <ion-col *ngFor="let major of majorList" col-6><img src = "{{major.image}}" (click)="openPage(major.major)" align="middle">\n\n      <h2 ALIGN=CENTER style="font-size:18px;">{{major.major}}</h2>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n    \n\n  </ion-grid>\n\n  </ion-list>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\majors\majors.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_4__providers_user_data_user_data__["a" /* UserDataProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]])
 ], MajorsPage);
 
 //# sourceMappingURL=majors.js.map
-
-/***/ }),
-
-/***/ 108:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectSageProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ConnectSageProvider = (function () {
-    function ConnectSageProvider(http) {
-        this.http = http;
-    }
-    ConnectSageProvider.prototype.getMajors = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            // this.http.get('http://localhost:3000/api/majors')
-            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/majors')
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                resolve(data);
-            });
-        });
-    };
-    ConnectSageProvider.prototype.getMentors = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            // this.http.get('http://localhost:3000/api/mentors')
-            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors')
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                resolve(data);
-            });
-        });
-    };
-    ConnectSageProvider.prototype.getMentees = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            // this.http.get('http://localhost:3000/api/mentees')
-            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentees')
-                .map(function (res) { return res.json(); })
-                .subscribe(function (data) {
-                resolve(data);
-            });
-        });
-    };
-    return ConnectSageProvider;
-}());
-ConnectSageProvider = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
-], ConnectSageProvider);
-
-//# sourceMappingURL=connect-sage-api.js.map
 
 /***/ }),
 
@@ -213,7 +144,7 @@ ConnectSageProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -288,12 +219,12 @@ var MentorRequestsPage = (function () {
 }());
 MentorRequestsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mentor-requests',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-requests/mentor-requests.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Connections</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-item-group>\n    <ion-item-divider color="light">Pending</ion-item-divider>\n    \n    <ion-item  *ngFor="let pending of pendingMentees" (click)="openMentorProfiles(pending)">{{pending.first_name}} {{pending.last_name}}<img class="adder" (click)="acceptMentee(pending)" src = "assets/images/greenPlus.png" align="left">\n      <img class="deleter"  src = "assets/images/redX.png" align="right">\n    </ion-item>\n\n    <ion-item-divider color="light">Accepted</ion-item-divider>\n    <ion-item *ngFor="let accepted of acceptedMentees" (click)="openMenteeProfiles(accepted)">{{accepted.first_name}} {{accepted.last_name}}<ion-icon name="text" item-end></ion-icon></ion-item>\n  </ion-item-group>\n\n</ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-requests/mentor-requests.html"*/,
+        selector: 'page-mentor-requests',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentor-requests\mentor-requests.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Connections</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item-group>\n\n    <ion-item-divider color="light">Pending</ion-item-divider>\n\n    \n\n    <ion-item  *ngFor="let pending of pendingMentees" (click)="openMentorProfiles(pending)">{{pending.first_name}} {{pending.last_name}}<img class="adder" (click)="acceptMentee(pending)" src = "assets/images/greenPlus.png" align="left">\n\n      <img class="deleter"  src = "assets/images/redX.png" align="right">\n\n    </ion-item>\n\n\n\n    <ion-item-divider color="light">Accepted</ion-item-divider>\n\n    <ion-item *ngFor="let accepted of acceptedMentees" (click)="openMenteeProfiles(accepted)">{{accepted.first_name}} {{accepted.last_name}}<ion-icon name="text" item-end></ion-icon></ion-item>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentor-requests\mentor-requests.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__["a" /* MentorsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__["a" /* MentorsProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__["a" /* MenteesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__["a" /* MenteesProvider */]) === "function" && _f || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_3__providers_mentees_mentees__["a" /* MenteesProvider */]])
 ], MentorRequestsPage);
 
-var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=mentor-requests.js.map
 
 /***/ }),
@@ -331,7 +262,7 @@ webpackEmptyAsyncContext.id = 159;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenteeRequestsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentees_mentees__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentees_mentees__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -430,7 +361,7 @@ var MenteeRequestsPage = (function () {
 }());
 MenteeRequestsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mentee-requests',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentee-requests/mentee-requests.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Mentor Connections</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-item-group>\n    <ion-item-divider color="light" class="title-request">Pending</ion-item-divider>\n\n    <ion-item *ngFor="let pending of mentee.pendingMentors" (click)="openMentorProfiles(pending)">{{pending.first_name}} {{pending.last_name}}\n      <img class="deleter" (click)="deleteMentorRequest(pending)" src="assets/images/redX.png" align="right">\n    </ion-item>\n\n    <ion-item-divider color="light" class="title-request">Accepted</ion-item-divider>\n\n    <ion-item *ngFor="let accepted of mentee.acceptedMentors">{{accepted.first_name}} {{accepted.last_name}}\n      <ion-icon name="text" item-end></ion-icon>\n    </ion-item>\n  </ion-item-group>\n\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentee-requests/mentee-requests.html"*/,
+        selector: 'page-mentee-requests',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentee-requests\mentee-requests.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Mentor Connections</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item-group>\n\n    <ion-item-divider color="light" class="title-request">Pending</ion-item-divider>\n\n\n\n    <ion-item *ngFor="let pending of mentee.pendingMentors" (click)="openMentorProfiles(pending)">{{pending.first_name}} {{pending.last_name}}\n\n      <img class="deleter" (click)="deleteMentorRequest(pending)" src="assets/images/redX.png" align="right">\n\n    </ion-item>\n\n\n\n    <ion-item-divider color="light" class="title-request">Accepted</ion-item-divider>\n\n\n\n    <ion-item *ngFor="let accepted of mentee.acceptedMentors">{{accepted.first_name}} {{accepted.last_name}}\n\n      <ion-icon name="text" item-end></ion-icon>\n\n    </ion-item>\n\n  </ion-item-group>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentee-requests\mentee-requests.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__providers_mentees_mentees__["a" /* MenteesProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
@@ -447,7 +378,7 @@ MenteeRequestsPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -487,7 +418,7 @@ var EditPage = (function () {
 }());
 EditPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-edit',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/'<ion-header>\n\n  <ion-navbar color="primary" (Load)="enableBody()">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n      <ion-title *ngIf="loaded">{{data.first_name}}</ion-title>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  \n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <div *ngIf="loaded">\n<img class = "user1" [src] = "data.pic">\n\n<p><b>Age:</b> {{data.age}}</p>\n<p><b>Education:</b> {{data.education}}</p>\n<p><b>Dream Job:</b> {{data.dream_career}}</p>\n<p><b>Bio:</b> {{data.bio}}</p>\n\n  <ion-row>\n     <ion-col width-50 style="text-align: center">\n  <button center ion-button>Save Changes</button>\n     </ion-col>\n  </ion-row>\n</div>\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/edit/edit.html"*/,
+        selector: 'page-edit',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\edit\edit.html"*/'<!-- View Profile Page -->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary" (Load)="enableBody()">\n\n\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n\n\n      <ion-title *ngIf="loaded">{{data.first_name}}</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button (click)="openSearchPage()" ion-button clear="true">\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div *ngIf="loaded">\n\n<img class = "user1" [src] = "data.pic">\n\n\n\n<p><b>Age:</b> {{data.age}}</p>\n\n<p><b>Education:</b> {{data.education}}</p>\n\n<p><b>Dream Job:</b> {{data.dream_career}}</p>\n\n<p><b>Bio:</b> {{data.bio}}</p>\n\n\n\n  <ion-row>\n\n     <ion-col width-50 style="text-align: center">\n\n  <button center ion-button>Save Changes</button>\n\n     </ion-col>\n\n  </ion-row>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\edit\edit.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]])
 ], EditPage);
@@ -503,12 +434,11 @@ EditPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_majors__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_majors__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_requests_mentor_requests__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__signup_signup__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentors_mentors__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_mentees_mentees__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_data_user_data__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_user_data_user_data__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -523,25 +453,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+// import { MentorsProvider } from '../../providers/mentors/mentors';
+// import { MenteesProvider } from '../../providers/mentees/mentees';
 
 
 // import { AuthService } from '../../providers/auth-service';
 //IonicPage()
 var LoginPage = (function () {
-    function LoginPage(nav, alertCtrl, loadingCtrl, mentorsService, menteesService, userService) {
+    function LoginPage(nav, alertCtrl, loadingCtrl, connectSageProvider, userService) {
         var _this = this;
         this.nav = nav;
         this.alertCtrl = alertCtrl;
         this.loadingCtrl = loadingCtrl;
-        this.mentorsService = mentorsService;
-        this.menteesService = menteesService;
+        this.connectSageProvider = connectSageProvider;
         this.userService = userService;
         this.registerCredentials = { username: 'Alexander_Watley', password: 'g00gle13' };
-        this.mentorsService.getMentors().then(function (data) {
+        this.connectSageProvider.getMentors().then(function (data) {
             _this.mentors = data;
         });
-        this.menteesService.getMentees().then(function (data) {
+        this.connectSageProvider.getMentees().then(function (data) {
             _this.mentees = data;
         });
     }
@@ -572,10 +502,10 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/login/login.html"*/'<ion-content class="login-content" padding>\n  <ion-row class="logo-row">\n    <ion-col></ion-col>\n    <ion-col width-67>\n      <img src="assets/images/productLogo.png">\n    </ion-col>\n    <ion-col></ion-col>\n  </ion-row>\n  <div class="login-box">\n    <form (ngSubmit)="login()" #registerForm="ngForm">\n      <ion-row>\n        <ion-col>\n          <ion-list inset>\n            \n            <ion-item>\n              <ion-input type="text" placeholder="Username" name="Username" [(ngModel)]="registerCredentials.username" required></ion-input>\n            </ion-item>\n            \n            <ion-item>\n              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>\n            </ion-item>\n            \n          </ion-list>\n        </ion-col>\n      </ion-row>\n      \n      <ion-row>\n        <ion-col class="signup-col">\n          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid" (click) = "login()">Login</button>\n          <!-- <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button> -->\n        </ion-col>\n      </ion-row>\n      \n    </form>\n    <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>\n    \n  </div>\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/login/login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\login\login.html"*/'<ion-content class="login-content" padding>\n\n  <ion-row class="logo-row">\n\n    <ion-col></ion-col>\n\n    <ion-col width-67>\n\n      <img src="assets/images/productLogo.png">\n\n    </ion-col>\n\n    <ion-col></ion-col>\n\n  </ion-row>\n\n  <div class="login-box">\n\n    <form (ngSubmit)="login()" #registerForm="ngForm">\n\n      <ion-row>\n\n        <ion-col>\n\n          <ion-list inset>\n\n            \n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Username" name="Username" [(ngModel)]="registerCredentials.username" required></ion-input>\n\n            </ion-item>\n\n            \n\n            <ion-item>\n\n              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>\n\n            </ion-item>\n\n            \n\n          </ion-list>\n\n        </ion-col>\n\n      </ion-row>\n\n      \n\n      <ion-row>\n\n        <ion-col class="signup-col">\n\n          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid" (click) = "login()">Login</button>\n\n          <!-- <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button> -->\n\n        </ion-col>\n\n      </ion-row>\n\n      \n\n    </form>\n\n    <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>\n\n    \n\n  </div>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\login\login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_mentees_mentees__["a" /* MenteesProvider */], __WEBPACK_IMPORTED_MODULE_7__providers_user_data_user_data__["a" /* UserDataProvider */]])
+        __WEBPACK_IMPORTED_MODULE_5__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */], __WEBPACK_IMPORTED_MODULE_6__providers_user_data_user_data__["a" /* UserDataProvider */]])
 ], LoginPage);
 
 //# sourceMappingURL=login.js.map
@@ -590,7 +520,7 @@ LoginPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -632,7 +562,7 @@ var MentorListPage = (function () {
 }());
 MentorListPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mentor-list',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-list/mentor-list.html"*/'<ion-header>\n    <ion-navbar color="primary">\n          \n        <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>{{path}}</ion-title>\n        <ion-buttons end>\n          <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n          </button>\n          </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n\n\n<ion-content padding>\n    <div *ngFor="let mentor of mentors">\n        <ion-card class="cardcolor" (click)="openMentorProfiles(mentor)" *ngIf="(mentor.path == path)">\n          <ion-card-content>\n            <ion-grid>\n              <ion-row class="row">\n                <ion-col col-4>\n                    <img [src]="mentor.pic" class="mentor-pic">\n                </ion-col>\n                <ion-col col-8>\n                    <h2 class="mentor-list">{{mentor.first_name}} {{mentor.last_name}}</h2>\n                    <p >{{mentor.major}} </p>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n          </ion-card-content>\n          </ion-card>\n        </div>\n</ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-list/mentor-list.html"*/,
+        selector: 'page-mentor-list',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentor-list\mentor-list.html"*/'<ion-header>\n\n    <ion-navbar color="primary">\n\n          \n\n        <button ion-button menuToggle>\n\n          <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>{{path}}</ion-title>\n\n        <ion-buttons end>\n\n          <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n\n          </button>\n\n          </ion-buttons>\n\n      </ion-navbar>\n\n    \n\n    </ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <div *ngFor="let mentor of mentors">\n\n        <ion-card class="cardcolor" (click)="openMentorProfiles(mentor)" *ngIf="(mentor.path == path)">\n\n          <ion-card-content>\n\n            <ion-grid>\n\n              <ion-row class="row">\n\n                <ion-col col-4>\n\n                    <img [src]="mentor.pic" class="mentor-pic">\n\n                </ion-col>\n\n                <ion-col col-8>\n\n                    <h2 class="mentor-list">{{mentor.first_name}} {{mentor.last_name}}</h2>\n\n                    <p >{{mentor.major}} </p>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-card-content>\n\n          </ion-card>\n\n        </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentor-list\mentor-list.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]])
 ], MentorListPage);
@@ -648,10 +578,10 @@ MentorListPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignUpPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_majors__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__majors_majors__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_requests_mentor_requests__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -666,17 +596,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// import { MenteesProvider } from '../../providers/mentees/mentees';
 
 // import { AuthService } from '../../providers/auth-service';
 //IonicPage()
 var SignUpPage = (function () {
-    function SignUpPage(navCtrl, nav, alertCtrl, loadingCtrl, mentorService, menteeService) {
+    function SignUpPage(navCtrl, nav, alertCtrl, loadingCtrl, mentorService, connectSageProvider) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.nav = nav;
         this.alertCtrl = alertCtrl;
         this.loadingCtrl = loadingCtrl;
         this.mentorService = mentorService;
-        this.menteeService = menteeService;
+        this.connectSageProvider = connectSageProvider;
         this.registerCredentials = {
             first_name: '',
             last_name: '',
@@ -688,17 +620,22 @@ var SignUpPage = (function () {
             education: '',
             dream_career: '',
             age: '',
-            bio: ''
+            bio: '',
+            path: ''
         };
+        this.connectSageProvider.getMajors().then(function (data) {
+            _this.paths = data;
+        });
     }
     SignUpPage.prototype.signUp = function () {
         console.log(this.registerCredentials);
         if (this.role == "Mentee") {
-            this.menteeService.createMentee(this.registerCredentials);
+            this.connectSageProvider.createMentee(this.registerCredentials);
             this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__majors_majors__["a" /* MajorsPage */]);
         }
         else {
-            this.mentorService.createMentor(this.registerCredentials);
+            this.registerCredentials.path = this.path;
+            this.connectSageProvider.createMentor(this.registerCredentials);
             this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__mentor_requests_mentor_requests__["a" /* MentorRequestsPage */]);
         }
     };
@@ -706,11 +643,12 @@ var SignUpPage = (function () {
 }());
 SignUpPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-signup',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/signup/signup.html"*/'<!-- <ion-header>\n  <ion-navbar color="primary"></ion-navbar>\n</ion-header> -->\n<ion-content class="signup-content" padding>\n  <ion-navbar transparent></ion-navbar>\n  <div class="signup-box">\n    <form #registerForm="ngForm">\n      <ion-row>\n        <ion-col>\n          <ion-list inset>\n\n            <ion-item>\n              <ion-input type="text" placeholder="First Name:" name="First Name" [(ngModel)]="registerCredentials.first_name" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Last Name:" name="Last Name" [(ngModel)]="registerCredentials.last_name" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Phone Number:" name="Phone Number" [(ngModel)]="registerCredentials.phone_number" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Age:" name="Age" [(ngModel)]="registerCredentials.age" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Username:" name="Username" [(ngModel)]="registerCredentials.username" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Password:" name="Password" [(ngModel)]="registerCredentials.password" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n            <ion-input type="text" placeholder="Hobbies:" name="Hobbies" [(ngModel)]="registerCredentials.hobbies" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Dream Career:" name="Dream Career" [(ngModel)]="registerCredentials.dream_career" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Current Job Position:" name="Current Job Position" [(ngModel)]="registerCredentials.job_position"\n                required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Education:" name="Education" [(ngModel)]="registerCredentials.education" required></ion-input>\n            </ion-item>\n            <br>\n            <ion-item>\n              <ion-input type="text" placeholder="Bio:" name="Bio" [(ngModel)]="registerCredentials.bio" required></ion-input>\n            </ion-item>\n            <br>\n\n\n          </ion-list>\n        </ion-col>\n      </ion-row>\n\n      <ion-item>\n        <ion-label>Role</ion-label>\n        <ion-select [(ngModel)]="role" name="role">\n          <ion-option value="Mentee">Mentee</ion-option>\n          <ion-option value="Mentor">Mentor</ion-option>\n\n        </ion-select>\n      </ion-item>\n      <ion-row>\n        <ion-col class="signup-col" col align="center">\n            <button color (click)="signUp()" ion-button color="light" large outline class="submit-btn" type="submit" [disabled]="!registerForm.form.valid">Sign Up</button>    \n        </ion-col>\n      </ion-row>\n\n    </form>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/signup/signup.html"*/,
+        selector: 'page-signup',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\signup\signup.html"*/'<!-- <ion-header>\n\n  <ion-navbar color="primary"></ion-navbar>\n\n</ion-header> -->\n\n<ion-content class="signup-content" padding>\n\n  <ion-navbar transparent></ion-navbar>\n\n  <div class="signup-box">\n\n    <form #registerForm="ngForm">\n\n      <ion-row>\n\n        <ion-col>\n\n          <ion-list inset>\n\n\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="First Name:" name="First Name" [(ngModel)]="registerCredentials.first_name" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Last Name:" name="Last Name" [(ngModel)]="registerCredentials.last_name" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Phone Number:" name="Phone Number" [(ngModel)]="registerCredentials.phone_number" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Age:" name="Age" [(ngModel)]="registerCredentials.age" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Username:" name="Username" [(ngModel)]="registerCredentials.username" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Password:" name="Password" [(ngModel)]="registerCredentials.password" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n            <ion-input type="text" placeholder="Hobbies:" name="Hobbies" [(ngModel)]="registerCredentials.hobbies" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Dream Career:" name="Dream Career" [(ngModel)]="registerCredentials.dream_career" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Current Job Position:" name="Current Job Position" [(ngModel)]="registerCredentials.job_position"\n\n                required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Education:" name="Education" [(ngModel)]="registerCredentials.education" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <ion-item>\n\n              <ion-input type="text" placeholder="Bio:" name="Bio" [(ngModel)]="registerCredentials.bio" required></ion-input>\n\n            </ion-item>\n\n            <br>\n\n            <div *ngIf="role == \'Mentor\'">\n\n            <ion-item >\n\n              <ion-input type="text" placeholder="Major:" name="Major" [(ngModel)]="registerCredentials.major" required></ion-input>\n\n            </ion-item>\n\n            <br />\n\n          </div>\n\n          </ion-list>\n\n        </ion-col>\n\n      </ion-row>\n\n      <div *ngIf="role == \'Mentor\'">\n\n      <ion-item>\n\n        <ion-label>Path</ion-label>\n\n        <ion-select [(ngModel)]="path" name="path">\n\n          <ion-option *ngFor="let path of paths" value={{path.major}}>{{path.major}}</ion-option>\n\n\n\n        </ion-select>\n\n      </ion-item>\n\n      <br />\n\n    </div>\n\n      <ion-item>\n\n        <ion-label>Role</ion-label>\n\n        <ion-select [(ngModel)]="role" name="role">\n\n          <ion-option value="Mentee">Mentee</ion-option>\n\n          <ion-option value="Mentor">Mentor</ion-option>\n\n\n\n        </ion-select>\n\n      </ion-item>\n\n      <ion-row>\n\n        <ion-col class="signup-col" col align="center">\n\n            <button color (click)="signUp()" ion-button color="light" large outline class="submit-btn" type="submit" [disabled]="!registerForm.form.valid">Sign Up</button>\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n    </form>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\signup\signup.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]) === "function" && _f || Object])
 ], SignUpPage);
 
+var _a, _b, _c, _d, _e, _f;
 //# sourceMappingURL=signup.js.map
 
 /***/ }),
@@ -735,7 +673,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(269);
@@ -745,8 +683,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_mentors_mentors__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_mentor_profiles_mentor_profiles__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_majors_majors__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_search_search__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_majors_majors__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_search_search__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_signup_signup__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_mentor_requests_mentor_requests__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_mentee_requests_mentee_requests__ = __webpack_require__(203);
@@ -757,9 +695,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_mentors_mentors__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_mentees_mentees__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_user_data_user_data__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_mentees_mentees__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__providers_user_data_user_data__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_connect_sage_api_connect_sage_api__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -945,7 +883,252 @@ MentorsProvider = __decorate([
 
 /***/ }),
 
-/***/ 26:
+/***/ 269:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_mentee_requests_mentee_requests__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_edit_edit__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_mentees_mentees__ = __webpack_require__(29);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen, mentorsService, userService) {
+        var _this = this;
+        this.mentorsService = mentorsService;
+        this.userService = userService;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */];
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            statusBar.styleDefault();
+            _this.hideSplashScreen(splashScreen);
+            _this.userService.getMentees().then(function (data) {
+                _this.data = data[0];
+            });
+        });
+    }
+    MyApp.prototype.setRoot = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */]);
+        this.navCtrl.popToRoot();
+    };
+    MyApp.prototype.openRequestPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */]);
+    };
+    MyApp.prototype.openEditPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pages_edit_edit__["a" /* EditPage */]);
+    };
+    // signOut(){
+    //   this.navCtrl.setRoot(LoginPage)
+    // }
+    MyApp.prototype.setUserData = function (userData) {
+        console.log("This user data is: ", userData);
+    };
+    MyApp.prototype.hideSplashScreen = function (splashScreen) {
+        if (splashScreen) {
+            setTimeout(function () {
+                splashScreen.hide();
+            }, 100);
+        }
+    };
+    return MyApp;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('content'),
+    __metadata("design:type", Object)
+], MyApp.prototype, "navCtrl", void 0);
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n  <ion-content padding>\n\n   <h2 *ngIf="data" ALIGN=CENTER style="font-size:25px;">{{data.first_name}}</h2> \n\n  \n\n  <img *ngIf="data" class = "user1-menu" [src]="data.pic">\n\n        \n\n        <button ion-button (click)="openRequestPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n\n        Mentors\n\n      </button>\n\n      <br>\n\n      <button ion-button (click)="setRoot()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n\n        Sign out\n\n      </button>\n\n        <br>\n\n      <button ion-button (click)="openEditPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n\n        View Profile\n\n      </button>\n\n     \n\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content ></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\app\app.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_mentees_mentees__["a" /* MenteesProvider */]])
+], MyApp);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 281:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user_data_user_data__ = __webpack_require__(56);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var MentorsPage = (function () {
+    function MentorsPage(navCtrl, navParams, mentorsService, ModalController, userService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.mentorsService = mentorsService;
+        this.ModalController = ModalController;
+        this.userService = userService;
+    }
+    MentorsPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.mentorsService.getMentors().then(function (data) {
+            console.log(data);
+            _this.mentors = data;
+        });
+        //this.userData = this.navParams.data;
+        this.userData = this.userService.getInfo();
+    };
+    MentorsPage.prototype.openMentorProfiles = function (mentor) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], { param1: mentor, param2: this.userData });
+    };
+    MentorsPage.prototype.openSearchPage = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__search_search__["a" /* SearchPage */]);
+    };
+    return MentorsPage;
+}());
+MentorsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-mentors',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentors\mentors.html"*/'<ion-header>\n\n<ion-navbar color="primary">\n\n      \n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Biology Mentors</ion-title>\n\n    <ion-buttons end>\n\n      <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card *ngFor="let mentor of mentors" class="cardcolor">\n\n    <ion-card-content>\n\n  <!--For this, we push the whole mentor object instead of just an idea-->\n\n  <img  src="assets/images/user1.svg" (click)="openMentorProfiles(mentor)" align="left">\n\n  <br>\n\n  <!-- <img class="greenos" src = "assets/images/greeno.png" align="right"> -->\n\n  <h2 ALIGN=CENTER style="font-size:25px;">{{mentor.first_name}} {{mentor.last_name}}</h2>\n\n  <p ALIGN=CENTER style="font-size:20px;">{{mentor.major}} </p>\n\n    </ion-card-content>\n\n    </ion-card>\n\n</ion-content>\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentors\mentors.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_5__providers_user_data_user_data__["a" /* UserDataProvider */]])
+], MentorsPage);
+
+//# sourceMappingURL=mentors.js.map
+
+/***/ }),
+
+/***/ 282:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RequestPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the RequestPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var RequestPage = (function () {
+    function RequestPage(navCtrl, navParams, mentorsService, ModalController) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.mentorsService = mentorsService;
+        this.ModalController = ModalController;
+    }
+    RequestPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.mentorsService.getMentors().then(function (data) {
+            console.log(data);
+            _this.mentors = data;
+        });
+    };
+    RequestPage.prototype.openMentorProfiles = function (mentor) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], mentor);
+    };
+    return RequestPage;
+}());
+RequestPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-request',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\request\request.html"*/'<!--\n\n  Generated template for the RequestPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Mentors</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-item-group>\n\n    <ion-item-divider color="light">Pending</ion-item-divider>\n\n    <ion-item>Jennifer Marston</ion-item>\n\n    <ion-item>Jordan Martinez</ion-item>\n\n    <ion-item>Michael Furey</ion-item>\n\n    <ion-item-divider color="light">Accepted</ion-item-divider>\n\n    <ion-item (click)="openMentorProfiles(mentor)">Frederick Casmarias\n\n    <ion-icon name="text" item-end></ion-icon></ion-item>\n\n  </ion-item-group>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\request\request.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
+], RequestPage);
+
+//# sourceMappingURL=request.js.map
+
+/***/ }),
+
+/***/ 283:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TabsPage = (function () {
+    function TabsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.tab1Root = 'Tab1Page';
+        this.tab2Root = 'Tab2Page';
+        this.myIndex = navParams.data.tabIndex || 0;
+    }
+    return TabsPage;
+}());
+TabsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\tabs\tabs.html"*/'<ion-tabs [selectedIndex]="myIndex">\n\n\n\n  <ion-tab [root]="tab1Root" tabTitle="Tab 1" tabIcon="home"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\tabs\tabs.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+], TabsPage);
+
+//# sourceMappingURL=tabs.js.map
+
+/***/ }),
+
+/***/ 29:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1069,251 +1252,6 @@ MenteesProvider = __decorate([
 
 /***/ }),
 
-/***/ 269:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_mentee_requests_mentee_requests__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_edit_edit__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_mentees_mentees__ = __webpack_require__(26);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen, mentorsService, userService) {
-        var _this = this;
-        this.mentorsService = mentorsService;
-        this.userService = userService;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */];
-        platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            statusBar.styleDefault();
-            _this.hideSplashScreen(splashScreen);
-            _this.userService.getMentees().then(function (data) {
-                _this.data = data[0];
-            });
-        });
-    }
-    MyApp.prototype.setRoot = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */]);
-        this.navCtrl.popToRoot();
-    };
-    MyApp.prototype.openRequestPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */]);
-    };
-    MyApp.prototype.openEditPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pages_edit_edit__["a" /* EditPage */]);
-    };
-    // signOut(){
-    //   this.navCtrl.setRoot(LoginPage)
-    // }
-    MyApp.prototype.setUserData = function (userData) {
-        console.log("This user data is: ", userData);
-    };
-    MyApp.prototype.hideSplashScreen = function (splashScreen) {
-        if (splashScreen) {
-            setTimeout(function () {
-                splashScreen.hide();
-            }, 100);
-        }
-    };
-    return MyApp;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('content'),
-    __metadata("design:type", Object)
-], MyApp.prototype, "navCtrl", void 0);
-MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content padding>\n   <h2 *ngIf="data" ALIGN=CENTER style="font-size:25px;">{{data.first_name}}</h2> \n  \n  <img *ngIf="data" class = "user1-menu" [src]="data.pic">\n        \n        <button ion-button (click)="openRequestPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        Mentors\n      </button>\n      <br>\n      <button ion-button (click)="setRoot()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        Sign out\n      </button>\n        <br>\n      <button ion-button (click)="openEditPage()" class="sidemenubutton" align="CENTER" style="display: block; margin: auto;" menuClose >\n        View Profile\n      </button>\n     \n  </ion-content>\n</ion-menu>\n<ion-nav [root]="rootPage" #content ></ion-nav>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/app/app.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_8__providers_mentees_mentees__["a" /* MenteesProvider */]])
-], MyApp);
-
-//# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 281:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__search_search__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_user_data_user_data__ = __webpack_require__(55);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var MentorsPage = (function () {
-    function MentorsPage(navCtrl, navParams, mentorsService, ModalController, userService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.mentorsService = mentorsService;
-        this.ModalController = ModalController;
-        this.userService = userService;
-    }
-    MentorsPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.mentorsService.getMentors().then(function (data) {
-            console.log(data);
-            _this.mentors = data;
-        });
-        //this.userData = this.navParams.data;
-        this.userData = this.userService.getInfo();
-    };
-    MentorsPage.prototype.openMentorProfiles = function (mentor) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], { param1: mentor, param2: this.userData });
-    };
-    MentorsPage.prototype.openSearchPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__search_search__["a" /* SearchPage */]);
-    };
-    return MentorsPage;
-}());
-MentorsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mentors',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentors/mentors.html"*/'<ion-header>\n<ion-navbar color="primary">\n      \n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Biology Mentors</ion-title>\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> <ion-icon name="search"></ion-icon>\n      </button>\n      </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <ion-card *ngFor="let mentor of mentors" class="cardcolor">\n    <ion-card-content>\n  <!--For this, we push the whole mentor object instead of just an idea-->\n  <img  src="assets/images/user1.svg" (click)="openMentorProfiles(mentor)" align="left">\n  <br>\n  <!-- <img class="greenos" src = "assets/images/greeno.png" align="right"> -->\n  <h2 ALIGN=CENTER style="font-size:25px;">{{mentor.first_name}} {{mentor.last_name}}</h2>\n  <p ALIGN=CENTER style="font-size:20px;">{{mentor.major}} </p>\n    </ion-card-content>\n    </ion-card>\n</ion-content>\n\n\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentors/mentors.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_5__providers_user_data_user_data__["a" /* UserDataProvider */]])
-], MentorsPage);
-
-//# sourceMappingURL=mentors.js.map
-
-/***/ }),
-
-/***/ 282:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RequestPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__ = __webpack_require__(33);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the RequestPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var RequestPage = (function () {
-    function RequestPage(navCtrl, navParams, mentorsService, ModalController) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.mentorsService = mentorsService;
-        this.ModalController = ModalController;
-    }
-    RequestPage.prototype.ionViewDidLoad = function () {
-        var _this = this;
-        this.mentorsService.getMentors().then(function (data) {
-            console.log(data);
-            _this.mentors = data;
-        });
-    };
-    RequestPage.prototype.openMentorProfiles = function (mentor) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__mentor_profiles_mentor_profiles__["a" /* MentorProfilePage */], mentor);
-    };
-    return RequestPage;
-}());
-RequestPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-request',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/request/request.html"*/'<!--\n  Generated template for the RequestPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Mentors</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-item-group>\n    <ion-item-divider color="light">Pending</ion-item-divider>\n    <ion-item>Jennifer Marston</ion-item>\n    <ion-item>Jordan Martinez</ion-item>\n    <ion-item>Michael Furey</ion-item>\n    <ion-item-divider color="light">Accepted</ion-item-divider>\n    <ion-item (click)="openMentorProfiles(mentor)">Frederick Casmarias\n    <ion-icon name="text" item-end></ion-icon></ion-item>\n  </ion-item-group>\n\n</ion-content>\n'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/request/request.html"*/,
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
-], RequestPage);
-
-//# sourceMappingURL=request.js.map
-
-/***/ }),
-
-/***/ 283:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var TabsPage = (function () {
-    function TabsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.tab1Root = 'Tab1Page';
-        this.tab2Root = 'Tab2Page';
-        this.myIndex = navParams.data.tabIndex || 0;
-    }
-    return TabsPage;
-}());
-TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/tabs/tabs.html"*/'<ion-tabs [selectedIndex]="myIndex">\n\n  <ion-tab [root]="tab1Root" tabTitle="Tab 1" tabIcon="home"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/tabs/tabs.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-], TabsPage);
-
-//# sourceMappingURL=tabs.js.map
-
-/***/ }),
-
 /***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1322,9 +1260,9 @@ TabsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__search_search__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__search_search__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1411,17 +1349,131 @@ var MentorProfilePage = (function () {
 }());
 MentorProfilePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-mentor-profiles',template:/*ion-inline-start:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-profiles/mentor-profiles.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-buttons end>\n      <button (click)="openSearchPage()" ion-button clear="true"> \n      <ion-icon name="search"></ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <img class="user1"[src]="mentor.pic">\n  <br>\n  <h1 style="font-size:24px;">{{mentor.first_name}} {{mentor.last_name}}</h1>\n  <p style="font-size:24px;">Education: {{mentor.education}} {{mentor.major}} </p>\n  <p style="font-size:24px;">Age: {{mentor.age}}\n    <p style="font-size:20px;">About: {{mentor.bio}}</p>\n    <ion-row>\n      <ion-col width-50 style="text-align: center">\n        <button center ion-button (click)="sendRequest()" [disabled] ="disable"> Request Connection</button>\n      </ion-col>\n    </ion-row>\n    <!-- <button ion-button (click)="openMap()">See Location</button> -->\n\n</ion-content>'/*ion-inline-end:"/Users/txt_10/Desktop/ConnectSage/ConnectSageApp/src/pages/mentor-profiles/mentor-profiles.html"*/,
+        selector: 'page-mentor-profiles',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentor-profiles\mentor-profiles.html"*/'<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n\n\n    <ion-buttons end>\n\n      <button (click)="openSearchPage()" ion-button clear="true"> \n\n      <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding>\n\n  <img class="user1"[src]="mentor.pic">\n\n  <br>\n\n  <h1 style="font-size:24px;">{{mentor.first_name}} {{mentor.last_name}}</h1>\n\n  <p style="font-size:24px;">Education: {{mentor.education}} {{mentor.major}} </p>\n\n  <p style="font-size:24px;">Age: {{mentor.age}}\n\n    <p style="font-size:20px;">About: {{mentor.bio}}</p>\n\n    <ion-row>\n\n      <ion-col width-50 style="text-align: center">\n\n        <button center ion-button (click)="sendRequest()" [disabled] ="disable"> Request Connection</button>\n\n      </ion-col>\n\n    </ion-row>\n\n    <!-- <button ion-button (click)="openMap()">See Location</button> -->\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\mentor-profiles\mentor-profiles.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */]) === "function" && _h || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_4__providers_mentors_mentors__["a" /* MentorsProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */], __WEBPACK_IMPORTED_MODULE_5__providers_mentees_mentees__["a" /* MenteesProvider */]])
 ], MentorProfilePage);
 
-var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=mentor-profiles.js.map
 
 /***/ }),
 
 /***/ 55:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectSageProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ConnectSageProvider = (function () {
+    function ConnectSageProvider(http) {
+        this.http = http;
+    }
+    ConnectSageProvider.prototype.getMajors = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            // this.http.get('http://localhost:3000/api/majors')
+            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/majors')
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                resolve(data);
+            });
+        });
+    };
+    ConnectSageProvider.prototype.getMentors = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            // this.http.get('http://localhost:3000/api/mentors')
+            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors')
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                resolve(data);
+            });
+        });
+    };
+    ConnectSageProvider.prototype.getMentees = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            // this.http.get('http://localhost:3000/api/mentees')
+            _this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentees')
+                .map(function (res) { return res.json(); })
+                .subscribe(function (data) {
+                resolve(data);
+            });
+        });
+    };
+    ConnectSageProvider.prototype.createMentee = function (mentee) {
+        console.log("creating mentee");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var menteeData = JSON.stringify({
+            "age": mentee.age,
+            "bio": mentee.bio,
+            "dream_career": mentee.dream_career,
+            "education": mentee.education,
+            "first_name": mentee.first_name,
+            "last_name": mentee.last_name,
+            "password": mentee.password,
+            "phone_number": mentee.phone_number,
+            "username": mentee.username,
+            "pic": "assets/profiles/unknown.jpg"
+        });
+        this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentees', menteeData, { headers: headers })
+            .subscribe(function (res) {
+            console.log(res.json());
+        });
+    };
+    ConnectSageProvider.prototype.createMentor = function (mentor) {
+        console.log("creating mentee");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var mentorData = JSON.stringify({
+            "age": mentor.age,
+            "bio": mentor.bio,
+            "dream_career": mentor.dream_career,
+            "education": mentor.education,
+            "first_name": mentor.first_name,
+            "job_position": mentor.job_position,
+            "last_name": mentor.last_name,
+            "password": mentor.password,
+            "major": mentor.major,
+            "phone_number": mentor.phone_number,
+            "username": mentor.username,
+            "pic": "assets/profiles/unknown.jpg",
+            "path": mentor.path
+        });
+        this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors', mentorData, { headers: headers })
+            .subscribe(function (res) {
+            console.log(res.json());
+        });
+    };
+    return ConnectSageProvider;
+}());
+ConnectSageProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], ConnectSageProvider);
+
+var _a;
+//# sourceMappingURL=connect-sage-api.js.map
+
+/***/ }),
+
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

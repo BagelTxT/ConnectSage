@@ -25219,6 +25219,20 @@ ion-navbar.toolbar {
   border: none !important;
 }
 
+page-edit .user1 {
+  width: 100%;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-top: -75px;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+
+page-edit p {
+  font-size: 2rem;
+}
+
 page-login .button-ios {
   height: 3em !important;
 }
