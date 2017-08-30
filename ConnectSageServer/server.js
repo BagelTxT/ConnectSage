@@ -35,7 +35,7 @@ var Mentor = mongoose.model('Mentor',{
     last_name: String,
     major: String,
     password: String,
-    phone_number: String,
+    phone_number: String, 
     username: String,
     pic: String,
     path: String
@@ -54,6 +54,14 @@ var Mentee = mongoose.model('Mentee',{
         phone_number: String,
         username: String,
         pic: String
+})
+
+var Connection = mongoose.model('Connection',{
+	accepted: {type: Boolean, default: false}, // Pending
+	mentorId: String,
+	menteeId: String,
+	date_connected: {type: Date, default: null},
+	date_sent: {type: Date, default: Date.now}
 })
  
 // Routes
@@ -97,6 +105,18 @@ var Mentee = mongoose.model('Mentee',{
         })
     });
 
+    app.get('/api/connections', function(req, res){
+        console.log("fetching connections");
+
+        Connection.find(function(err, connections){
+            
+            if(err)
+                res.send(err)
+
+            res.json(connections);
+        })
+    });
+
     app.post('/api/majors', function(req, res) {
  
         console.log("creating major");
@@ -112,6 +132,26 @@ var Mentee = mongoose.model('Mentee',{
                 if (err)
                     res.send(err)
                 res.json(major);
+            });
+        });
+ 
+    });
+
+     app.post('/api/connections', function(req, res) {
+ 
+        console.log("creating connection");
+ 
+        Connection.create({ // Pending
+			mentorId: req.body.mentorId,
+			menteeId: req.body.menteeId
+        }, function(err, connection) {
+            if (err)
+                res.send(err);
+ 
+            Connection.find(function(err, connection) {
+                if (err)
+                    res.send(err)
+                res.json(connection);
             });
         });
  
@@ -155,10 +195,6 @@ var Mentee = mongoose.model('Mentee',{
     app.post('/api/mentees', function(req, res) {
     
             console.log("creating mentees");
-
-            
-    
-
             Mentee.create({
                 acceptedMentees: [],
                 age: req.body.age,
@@ -184,7 +220,40 @@ var Mentee = mongoose.model('Mentee',{
                 });
             });
     
-               });           
+               });   
+
+
+         app.delete('/api/majors/:major_id', function(req, res) {
+	        Major.remove({
+	            _id : req.params.major_id
+	        }, function(err, review) {
+	 
+	        });
+   		 });    
+
+   		  app.delete('/api/mentors/:mentor_id', function(req, res) {
+		        Mentor.remove({
+		            _id : req.params.mentor_id
+		        }, function(err, review) {
+		 
+		        });
+		   }); 
+
+		   app.delete('/api/mentees/:mentee_id', function(req, res) {
+		        Mentee.remove({
+		            _id : req.params.mentee_id
+		        }, function(err, review) {
+		 
+		        });
+		   });  
+
+		   app.delete('/api/connections/:connection_id', function(req, res) {
+		        Review.remove({
+		            _id : req.params.connection_id
+		        }, function(err, review) {
+		 
+		        });
+		   });     
  
  
 

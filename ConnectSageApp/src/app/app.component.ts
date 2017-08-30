@@ -37,7 +37,6 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       this.hideSplashScreen(splashScreen);
-
     });
     this.firstEntry = true;
   }
@@ -66,7 +65,7 @@ export class MyApp {
   }
 
   openEditPage(){
-    this.navCtrl.push(EditPage);
+    this.navCtrl.push(EditPage, this.user);
   }
 
   updateUser(){

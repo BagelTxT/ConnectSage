@@ -457,17 +457,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var EditPage = (function () {
     function EditPage(navCtrl, navParams, provider) {
-        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.provider = provider;
-        this.loaded = false;
-        this.provider.getMentees().then(function (data) {
-            console.log(data);
-            _this.data = data[0];
-            console.log(_this.data.first_name);
-            _this.loaded = true;
-        });
+        this.data = this.navParams.data;
     }
     EditPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad EditPage');
@@ -476,11 +469,12 @@ var EditPage = (function () {
 }());
 EditPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-edit',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\edit\edit.html"*/'<!-- View Profile Page -->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary" (Load)="enableBody()">\n\n\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n\n\n      <ion-title *ngIf="loaded">{{data.first_name}}</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button (click)="openSearchPage()" ion-button clear="true">\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div *ngIf="loaded">\n\n<img class = "user1" [src] = "data.pic">\n\n\n\n<p><b>Age:</b> {{data.age}}</p>\n\n<p><b>Education:</b> {{data.education}}</p>\n\n<p><b>Dream Job:</b> {{data.dream_career}}</p>\n\n<p><b>Bio:</b> {{data.bio}}</p>\n\n\n\n  <ion-row>\n\n     <ion-col width-50 style="text-align: center">\n\n  <button center ion-button>Save Changes</button>\n\n     </ion-col>\n\n  </ion-row>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\edit\edit.html"*/,
+        selector: 'page-edit',template:/*ion-inline-start:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\edit\edit.html"*/'<!-- View Profile Page -->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary" (Load)="enableBody()">\n\n\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n\n\n      <ion-title>{{data.first_name}}</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button (click)="openSearchPage()" ion-button clear="true">\n\n      <ion-icon name="search"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n<img class = "user1" [src] = "data.pic">\n\n\n\n<p><b>Age:</b> {{data.age}}</p>\n\n<p><b>Education:</b> {{data.education}}</p>\n\n<p><b>Dream Job:</b> {{data.dream_career}}</p>\n\n<p><b>Bio:</b> {{data.bio}}</p>\n\n\n\n  <ion-row>\n\n     <ion-col width-50 style="text-align: center">\n\n  <button center ion-button>Save Changes</button>\n\n     </ion-col>\n\n  </ion-row>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Abel\Desktop\connectSage\ConnectSage\ConnectSageApp\src\pages\edit\edit.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_connect_sage_api_connect_sage_api__["a" /* ConnectSageProvider */]) === "function" && _c || Object])
 ], EditPage);
 
+var _a, _b, _c;
 //# sourceMappingURL=edit.js.map
 
 /***/ }),
@@ -938,7 +932,7 @@ var MyApp = (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__pages_mentee_requests_mentee_requests__["a" /* MenteeRequestsPage */]);
     };
     MyApp.prototype.openEditPage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__pages_edit_edit__["a" /* EditPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__pages_edit_edit__["a" /* EditPage */], this.user);
     };
     MyApp.prototype.updateUser = function () {
         var _this = this;

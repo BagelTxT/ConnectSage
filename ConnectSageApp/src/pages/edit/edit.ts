@@ -13,17 +13,11 @@ import {ConnectSageProvider} from '../../providers/connect-sage-api/connect-sage
   templateUrl: 'edit.html',
 })
 export class EditPage {
-  data:any;
-  loaded: boolean;
+  data: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public provider: ConnectSageProvider) {
-    this.loaded = false;
-    this.provider.getMentees().then((data) => {
-      console.log(data);
-      this.data = data[0];
-      console.log(this.data.first_name)
-      this.loaded = true;
-    });
+    this.data = this.navParams.data;
+
   }
 
   ionViewDidLoad() {
