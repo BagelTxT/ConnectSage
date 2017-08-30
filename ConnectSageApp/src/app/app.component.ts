@@ -1,9 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, NgZone } from '@angular/core';
 import { NavController, Nav, NavParams, Platform, MenuClose, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MentorsProvider } from '../providers/mentors/mentors';
-
+import { Storage } from '@ionic/storage';
 import { UserDataProvider } from '../providers/user-data/user-data';
 
 import { MentorRequestsPage } from'../pages/mentor-requests/mentor-requests';
@@ -20,25 +20,45 @@ export class MyApp {
   @ViewChild('content') navCtrl
   rootPage:any = LoginPage;
   mentorName: any;
-  data: any;
+  user: any;
+  firstEntry: boolean;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public mentorsService: MentorsProvider, public userService: MenteesProvider) {
+  constructor(private ngZone:NgZone, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public mentorsService: MentorsProvider, public userService: MenteesProvider,  private storage: Storage) {
+    storage.get('user').then((val) => {
+      this.user = val;
+      console.log(this.user);
+    });
+
+    storage.get('user')
+
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       this.hideSplashScreen(splashScreen);
-      this.userService.getMentees().then((data) => {
-        this.data = data[0];
-      
-      });
 
     });
+    this.firstEntry = true;
+  }
 
+  print(){
+    console.log("good")
+    console.log(this.user);
+  }
+
+  ionViewDidEnter(){
+    console.log("DID ENTER");
+    this.storage.get('user').then((val) => {
+      this.user = val;
+      console.log(this.user);
+    });
   }
   setRoot() {
+    this.storage.set('user', null);
     this.navCtrl.setRoot(LoginPage);
     this.navCtrl.popToRoot();
+    this.user = null;
   }
 
   openRequestPage(){
@@ -48,12 +68,23 @@ export class MyApp {
   openEditPage(){
     this.navCtrl.push(EditPage);
   }
-  // signOut(){
-  //   this.navCtrl.setRoot(LoginPage)
-  // }
 
-  public setUserData(userData){
-    console.log("This user data is: ", userData)
+  updateUser(){
+    if(this.firstEntry){
+    console.log("User has been updated!");
+    this.ngZone.run(()=>{
+      this.storage.get('user').then((val) => {
+
+
+        this.user = val;
+        console.log(this.user);
+      });
+    })
+  }
+  }
+
+  deleteUser(){
+    this.user = null;
   }
 
   hideSplashScreen(splashScreen) {
@@ -63,5 +94,5 @@ export class MyApp {
     }, 100);
     }
   }
-  
+
 }
