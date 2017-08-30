@@ -92,6 +92,21 @@ export class ConnectSageProvider {
       });
 		}
 
+    makeConnection(menteeId, mentorId){
+      console.log("creating connection")
+			let headers = new Headers();
+			headers.append('Content-Type', 'application/json');
+			let mentorData = JSON.stringify({
+					"mentorId": mentorId,
+					"bio": mentor.bio
+				});
+
+			this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors', mentorData,  { headers: headers })
+			.subscribe(res => {
+        console.log(res.json());
+      });
+    }
+
 
 
 }

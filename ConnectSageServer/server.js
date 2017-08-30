@@ -58,8 +58,8 @@ var Mentee = mongoose.model('Mentee',{
 
 var Connection = mongoose.model('Connection',{
 	accepted: {type: Boolean, default: false}, // Pending
-	mentorId: String,
-	menteeId: String,
+	mentor_id: String,
+	mentee_id: String,
 	date_connected: {type: Date, default: null},
 	date_sent: {type: Date, default: Date.now}
 })
@@ -142,8 +142,8 @@ var Connection = mongoose.model('Connection',{
         console.log("creating connection");
  
         Connection.create({ // Pending
-			mentorId: req.body.mentorId,
-			menteeId: req.body.menteeId
+			mentor_id: req.body.mentor_id,
+			mentee_id: req.body.mentee_id
         }, function(err, connection) {
             if (err)
                 res.send(err);

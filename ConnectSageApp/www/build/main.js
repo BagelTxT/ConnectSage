@@ -1430,13 +1430,27 @@ var ConnectSageProvider = (function () {
             console.log(res.json());
         });
     };
+    ConnectSageProvider.prototype.makeConnection = function (menteeId, mentorId) {
+        console.log("creating connection");
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        var mentorData = JSON.stringify({
+            "mentorId": mentorId,
+            "bio": mentor.bio
+        });
+        this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors', mentorData, { headers: headers })
+            .subscribe(function (res) {
+            console.log(res.json());
+        });
+    };
     return ConnectSageProvider;
 }());
 ConnectSageProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], ConnectSageProvider);
 
+var _a;
 //# sourceMappingURL=connect-sage-api.js.map
 
 /***/ }),
