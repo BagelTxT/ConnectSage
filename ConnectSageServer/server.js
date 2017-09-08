@@ -248,12 +248,38 @@ var Connection = mongoose.model('Connection',{
 		   });  
 
 		   app.delete('/api/connections/:connection_id', function(req, res) {
-		        Review.remove({
+		        Connection.remove({
 		            _id : req.params.connection_id
 		        }, function(err, review) {
 		 
 		        });
 		   });     
+
+		   app.put('/api/connections/:connection_id', function(req, res) {
+		   		// Connection.update({_id: : req.params.connection_id}, { $set: { date_connected: Date.now}}, (err, numAffected)=>{})
+		   		Connection.findById(req.params.connection_id, function(err, connection){
+		   			if(!connection){
+		   				console.log("Connection not found");
+		   				return;
+		   			} else{
+		   				connection.date_connected = Date.now();
+		   				connection.accepted = true;
+
+		   				connection.save(function(err) {
+					      if (err)
+					        console.log('error')
+					      else
+					        console.log('success')
+					    });
+		   			}
+		   		});
+
+		   		 Connection.find(function(err, connection) {
+                    if (err)
+                        res.send(err)
+                    res.json(connection);
+                });
+		   })
  
  
 
