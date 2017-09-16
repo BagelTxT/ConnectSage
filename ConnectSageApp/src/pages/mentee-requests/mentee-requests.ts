@@ -1,60 +1,67 @@
 import { Component,NgZone } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { MentorsProvider } from '../../providers/mentors/mentors';
 import { MenteesProvider } from '../../providers/mentees/mentees';
 import { MentorProfilePage } from '../mentor-profiles/mentor-profiles';
+import {ConnectSageProvider} from '../../providers/connect-sage-api/connect-sage-api';
 //This page processes requests OF MENTEES
-import { AlertController } from 'ionic-angular';
 @Component({
   selector: 'page-mentee-requests',
   templateUrl: 'mentee-requests.html',
 })
 export class MenteeRequestsPage {
     mentors: any;
+    connections: any;
     pendingMentors: any = [];
     pMentCopy: any = [];
     acceptedMentors: any = [];
     aMentCopy: any = [];
     userData: any;
     mentee: any;
-    title_1 = false;
-    title_2 = false;
 
     constructor(public _ngZone: NgZone,public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams,
-      public menteesService: MenteesProvider, public ModalController: ModalController) {
+      public menteesService: MenteesProvider, public ModalController: ModalController, private provider: ConnectSageProvider) {
 
-      this.menteesService.getMentees().then((data) => {
-          this.mentee = data[0];
+        this.provider.getConnections().then((data) =>{
+          this.mentee = this.navParams.data;
+          this.connections = data;
+          // console.log(this.connections[0]);
 
-          if(this.mentee.pendingMentors > 0){
-            this.title_1 = true;
-          }
-          if(this.mentee.acceptedMentors > 0){
-            this.title_2 = true;
-          }
-          for( let mentor of this.mentee.pendingMentors){
-            if(mentor.pic == "assets/profiles/mentors/Roberto_Sanchez.jpg"){
-              setTimeout(() => { 
-                let alert = this.alertCtrl.create({
-                  title: 'Request Accepted',
-                  subTitle: "Roberto Sanchez has accepted your request!",
-                  buttons: ['Ok']
-                });
-                alert.present();
-                this.swapMentor()
-              }, 4000);
+          let acceptedMentorIds = [];
+          let pendingMentorIds = [];
+
+          for(let i = 0; i < this.connections.length; i++){
+            if(this.connections[i].mentee_id == this.mentee._id){
+              if(this.connections[i].accepted){
+                  acceptedMentorIds.push(this.connections[i].mentor_id);
+              } else{
+                  pendingMentorIds.push(this.connections[i].mentor_id);
+              }
             }
           }
 
-        });
+          this.provider.getMentors().then((data) =>{
+            this.mentors = data;
+            for(let mentor of this.mentors){
+              for(let acceptedMentorId of acceptedMentorIds){
+                if(acceptedMentorId == mentor._id){
+                  this.acceptedMentors.push(mentor);
+                }
+              }
+
+              for(let pendingMentorId of pendingMentorIds){
+                if(pendingMentorId == mentor._id){
+                  this.pendingMentors.push(mentor);
+                }
+              }
+            }
+          })
 
 
+        })
 
     }
 
-    ionViewDidLoad() {
-
-    }
     swapMentor(){
       this._ngZone.run(()=>
         {
@@ -74,30 +81,44 @@ export class MenteeRequestsPage {
 
     }
     removeMentorrequest(mentor){
-      
+
     }
 
     functiontofindIndexByKeyValue(arraytosearch, key, valuetosearch) {
-      
+
      for (var i = 0; i < arraytosearch.length; i++) {
-      
+
      if (arraytosearch[i][key] == valuetosearch) {
      return i;
      }
      }
      return null;
      }
+
     deleteMentorRequest(mentor) {
-      this.menteesService.deletePendingMentor("598172c2f36d2839ce8b9d1f", mentor._id);
-      for (let i = 0; i < this.pendingMentors.length; i++) {
-        if (this.pendingMentors[i]._id === mentor._id)
-          this.pMentCopy.splice(i, 1);
+    let mentorId = mentor._id;
+    let menteeId = this.mentee._id;
+
+    for(let connection of this.connections){
+      console.log("looping");
+      if(connection.mentor_id == mentorId && connection.mentee_id == menteeId){
+        console.log("Deleting");
+        this.provider.deleteConnection(connection._id);
+        break;
+      } else{
+        console.log(connection.mentor_id + "   " + mentorId);
+        console.log(connection.mentee_id + "   " + menteeId)
       }
-      this.pendingMentors = this.pMentCopy;
+    }
+
+    for (let i = 0; i < this.pendingMentors.length; i++) {
+       if (this.pendingMentors[i]._id === mentor._id){
+         this.pendingMentors.splice(i, 1);
+       }
+     }
     }
 
     openMentorProfiles(mentor) {
       this.navCtrl.push(MentorProfilePage, mentor);
     }
   }
-

@@ -4,8 +4,11 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ConnectSageProvider {
+  headers: Headers;
 
   constructor(public http: Http) {
+    this.headers = new Headers();
+    this.headers.append('Content-Type', 'application/json');
   }
 
 
@@ -43,10 +46,18 @@ export class ConnectSageProvider {
         });
     }
 
+    getConnections(){
+      return new Promise(resolve => {
+          this.http.get('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/connections')
+              .map(res => res.json())
+              .subscribe(data => {
+                  resolve(data);
+              });
+      });
+    }
+
 		createMentee(mentee){
 			console.log("creating mentee")
-			let headers = new Headers();
-			headers.append('Content-Type', 'application/json');
 			let menteeData = JSON.stringify({
 					"age": mentee.age,
 					"bio": mentee.bio,
@@ -60,16 +71,14 @@ export class ConnectSageProvider {
 					"pic": "assets/profiles/unknown.jpg"
 				});
 
-			this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentees', menteeData,  { headers: headers })
+			this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentees', menteeData,  { headers: this.headers })
 			.subscribe(res => {
         console.log(res.json());
       });
 		}
 
     createMentor(mentor){
-			console.log("creating mentee")
-			let headers = new Headers();
-			headers.append('Content-Type', 'application/json');
+			console.log("creating mentee");
 			let mentorData = JSON.stringify({
 					"age": mentor.age,
 					"bio": mentor.bio,
@@ -86,27 +95,41 @@ export class ConnectSageProvider {
           "path": mentor.path
 				});
 
-			this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors', mentorData,  { headers: headers })
+			this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors', mentorData,  { headers: this.headers })
 			.subscribe(res => {
         console.log(res.json());
       });
 		}
 
     makeConnection(menteeId, mentorId){
-      console.log("creating connection")
-			let headers = new Headers();
-			headers.append('Content-Type', 'application/json');
+      console.log("creating connection");
 			let mentorData = JSON.stringify({
-					"mentorId": mentorId,
-					"bio": mentor.bio
+					"mentor_id": mentorId,
+					"mentee_id": menteeId
 				});
 
-			this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/mentors', mentorData,  { headers: headers })
+			this.http.post('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/connections', mentorData,  { headers: this.headers })
 			.subscribe(res => {
         console.log(res.json());
       });
     }
 
+    deleteConnection(connectionId){
+      console.log("trying");
+      this.http.delete('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/connections/' + connectionId).subscribe((res) => {
+      console.log(res.json());
+    });
+    }
 
+    acceptConnection(connectionId){    
+    
+    return new Promise(resolve => {
 
-}
+      this.http.put('http://ec2-18-220-10-98.us-east-2.compute.amazonaws.com:3000/api/connections/' + connectionId,{headers: this.headers}, null)
+              .map(res => res.json())
+              .subscribe(data => {
+                  resolve(data);
+              });
+      });
+    }
+  }

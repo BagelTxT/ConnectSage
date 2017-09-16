@@ -11,9 +11,8 @@
 
   <ion-item-group>
     <ion-item-divider color="light">Pending</ion-item-divider>
-    
-    <ion-item  *ngFor="let pending of pendingMentees" (click)="openMentorProfiles(pending)">{{pending.first_name}} {{pending.last_name}}<img class="adder" (click)="acceptMentee(pending)" src = "assets/images/greenPlus.png" align="left">
-      <img class="deleter"  src = "assets/images/redX.png" align="right">
+    <ion-item  *ngFor="let pending of pendingMentees" (click)="openMenteeProfiles(pending)">{{pending.first_name}} {{pending.last_name}}<img class="adder" (click)="acceptMentee(pending)" src = "assets/images/greenPlus.png" align="left">
+      <img class="deleter"  src = "assets/images/redX.png" (click)="deleteMentorRequest(pending)" align="right">
     </ion-item>
 
     <ion-item-divider color="light">Accepted</ion-item-divider>

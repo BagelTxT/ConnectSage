@@ -257,7 +257,9 @@ var Connection = mongoose.model('Connection',{
 
 		   app.put('/api/connections/:connection_id', function(req, res) {
 		   		// Connection.update({_id: : req.params.connection_id}, { $set: { date_connected: Date.now}}, (err, numAffected)=>{})
+		   		console.log("Accepting")
 		   		Connection.findById(req.params.connection_id, function(err, connection){
+		   			console.log("Accepting2")
 		   			if(!connection){
 		   				console.log("Connection not found");
 		   				return;

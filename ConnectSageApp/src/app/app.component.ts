@@ -24,12 +24,6 @@ export class MyApp {
   firstEntry: boolean;
 
   constructor(private ngZone:NgZone, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public mentorsService: MentorsProvider, public userService: MenteesProvider,  private storage: Storage) {
-    storage.get('user').then((val) => {
-      this.user = val;
-      console.log(this.user);
-    });
-
-    storage.get('user')
 
 
     platform.ready().then(() => {
@@ -46,13 +40,6 @@ export class MyApp {
     console.log(this.user);
   }
 
-  ionViewDidEnter(){
-    console.log("DID ENTER");
-    this.storage.get('user').then((val) => {
-      this.user = val;
-      console.log(this.user);
-    });
-  }
   setRoot() {
     this.storage.set('user', null);
     this.navCtrl.setRoot(LoginPage);
@@ -61,7 +48,7 @@ export class MyApp {
   }
 
   openRequestPage(){
-    this.navCtrl.push(MenteeRequestsPage);
+    this.navCtrl.push(MenteeRequestsPage, this.user);
   }
 
   openEditPage(){

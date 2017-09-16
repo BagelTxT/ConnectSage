@@ -21,14 +21,7 @@ export class LoginPage {
 
   constructor(private nav: NavController, private alertCtrl: AlertController, private loadingCtrl: LoadingController
     , public connectSageProvider: ConnectSageProvider, private storage: Storage) {
-      // let user;
-      // storage.get('user').then((val) => {
-      //   user = val;
-      //   if(user != null){
-      //     this.registerCredentials == user;
-      //     this.login();
-      //   }
-      // });
+      storage.set('user', null);
 
 
     this.connectSageProvider.getMentors().then((data) => {
