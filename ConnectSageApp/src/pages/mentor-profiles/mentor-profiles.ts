@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
-import { SMS } from '@ionic-native/sms';
+// import { SMS } from '@ionic-native/sms';
 import { Platform } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import {ConnectSageProvider} from '../../providers/connect-sage-api/connect-sage-api';
@@ -27,7 +27,7 @@ export class MentorProfilePage {
   };
   disable = false;
 
-  constructor(private provider: ConnectSageProvider, public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public mentorsService: MentorsProvider, public ModalController: ModalController, private smsVar: SMS, public menteesService: MenteesProvider, private storage: Storage) {
+  constructor(private provider: ConnectSageProvider, public alertCtrl:AlertController,public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public mentorsService: MentorsProvider, public ModalController: ModalController, public menteesService: MenteesProvider, private storage: Storage) {
     platform.ready().then(() => {
       this.mentor = this.navParams.data;
       this.storage.get('user').then((val) => {
@@ -72,21 +72,6 @@ export class MentorProfilePage {
     this.mentorsService.updatePendingMentee(this.mentor._id, '598172c2f36d2839ce8b9d1f');
   }
 
-  sendSMS() {
-    this.sendMessage = 'Hi ' + this.mentor.first_name + ' my name is';
-    var options = {
-      replaceLineBreaks: false, // true to replace \n by a new line, false by default
-      android: {
-        intent: 'INTENT'  // Opens Default sms app
-        //intent: '' // Sends sms without opening default sms app
-      }
-    }
-    this.smsVar.send(this.mentor.phone_number, this.sendMessage, options)
-      .then(() => {
-
-      }, () => {
-
-      });
-  }
+  
 
 }

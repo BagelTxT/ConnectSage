@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { MentorsPage } from '../mentors/mentors';
-import { SearchPage } from '../search/search';
+// import { SearchPage } from '../search/search';
 import {ConnectSageProvider} from '../../providers/connect-sage-api/connect-sage-api';
 import { MentorListPage } from '../mentor-list/mentor-list'
 

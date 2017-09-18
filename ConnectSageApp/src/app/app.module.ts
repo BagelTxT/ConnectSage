@@ -6,18 +6,18 @@ import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { LoginPage } from '../pages/login/login';
-import { MentorsPage } from '../pages/mentors/mentors';
+// import { MentorsPage } from '../pages/mentors/mentors';
 import { MentorProfilePage } from '../pages/mentor-profiles/mentor-profiles';
 import { MenteeProfilePage } from '../pages/mentee-profile/mentee-profile';
 import { MajorsPage } from '../pages/majors/majors';
-import { SearchPage } from'../pages/search/search';
+// import { SearchPage } from'../pages/search/search';
 import { SignUpPage } from '../pages/signup/signup';
 import { MentorRequestsPage } from '../pages/mentor-requests/mentor-requests';
 import { MenteeRequestsPage } from '../pages/mentee-requests/mentee-requests';
 import { EditPage } from '../pages/edit/edit';
 import { RequestPage }from '../pages/request/request';
 import { MentorListPage } from '../pages/mentor-list/mentor-list'
-import { TabsPage } from '../pages/tabs/tabs';
+// import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,9 +30,9 @@ import {ConnectSageProvider} from '../providers/connect-sage-api/connect-sage-ap
   declarations: [
     MyApp,
     LoginPage,
-    MentorsPage,
+    // MentorsPage,
     MajorsPage,
-    SearchPage,
+    // SearchPage,
     SignUpPage,
     MentorProfilePage,
     MenteeProfilePage,
@@ -41,7 +41,7 @@ import {ConnectSageProvider} from '../providers/connect-sage-api/connect-sage-ap
     MentorRequestsPage,
     MenteeRequestsPage,
     MentorListPage,
-    TabsPage
+    // TabsPage
   ],
   imports: [
     BrowserModule,
@@ -53,10 +53,10 @@ import {ConnectSageProvider} from '../providers/connect-sage-api/connect-sage-ap
   entryComponents: [
     MyApp,
     LoginPage,
-    MentorsPage,
+    // MentorsPage,
     MajorsPage,
     MajorsPage,
-    SearchPage,
+    // SearchPage,
     SignUpPage,
     MentorProfilePage,
     MenteeProfilePage,
@@ -65,7 +65,7 @@ import {ConnectSageProvider} from '../providers/connect-sage-api/connect-sage-ap
     MentorRequestsPage,
     MenteeRequestsPage,
     MentorListPage,
-    TabsPage
+    // TabsPage
   ],
   providers: [
     StatusBar,
